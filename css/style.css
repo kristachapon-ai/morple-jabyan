@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap');
+
+:root {
+  --pink: #f8b9d4;
+  --pink-soft: #ffe5f0;
+  --lavender: #d9c7ff;
+  --lavender-soft: #f0eaff;
+  --blue: #cce9ff;
+  --cream: #fffaf4;
+  --white: #ffffff;
+  --purple: #765d91;
+  --text: #594c62;
+  --text-soft: #897b91;
+  --gold: #d9af68;
+  --shadow: 0 18px 50px rgba(118, 93, 145, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Prompt", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(248, 185, 212, 0.35), transparent 28%),
+    radial-gradient(circle at 85% 20%, rgba(204, 233, 255, 0.45), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(217, 199, 255, 0.35), transparent 32%),
+    var(--cream);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 18px 6%;
+  background: rgba(255, 250, 244, 0.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(118, 93, 145, 0.08);
+}
+
+header > div {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+header > div > a {
+  font-family: "Mali", cursive;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--purple);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+nav a {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  transition: 0.25s ease;
+}
+
+nav a:hover {
+  color: var(--purple);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+#home {
+  min-height: 680px;
+  padding: 120px 24px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#home::before,
+#home::after {
+  content: "✦";
+  position: absolute;
+  color: rgba(217, 175, 104, 0.45);
+  font-size: 4rem;
+}
+
+#home::before {
+  top: 22%;
+  left: 12%;
+}
+
+#home::after {
+  right: 12%;
+  bottom: 22%;
+  font-size: 2.8rem;
+}
+
+#home > p:first-child {
+  color: var(--purple);
+  letter-spacing: 0.18em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+#home h1 {
+  font-family: "Mali", cursive;
+  font-size: clamp(3rem, 8vw, 6.3rem);
+  line-height: 1.15;
+  color: var(--purple);
+  margin-bottom: 22px;
+  text-shadow: 0 8px 30px rgba(118, 93, 145, 0.08);
+}
+
+#home h1::after {
+  content: " ✨";
+  font-size: 0.45em;
+  vertical-align: top;
+}
+
+#home > p:nth-of-type(2) {
+  max-width: 600px;
+  font-size: 1.15rem;
+  color: var(--text-soft);
+  margin-bottom: 36px;
+}
+
+#home > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 30px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--pink), var(--lavender));
+  color: #594c62;
+  font-weight: 600;
+  box-shadow: 0 14px 35px rgba(217, 199, 255, 0.35);
+  transition: 0.3s ease;
+}
+
+#home > a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(217, 199, 255, 0.5);
+}
+
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+main > section:nth-of-type(2) {
+  padding: 40px 24px 120px;
+}
+
+main > section:nth-of-type(2) > div {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 22px;
+}
+
+article {
+  position: relative;
+  padding: 38px 30px;
+  min-height: 310px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+article::after {
+  content: "✦";
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.3rem;
+}
+
+article:hover {
+  transform: translateY(-7px);
+}
+
+article:nth-child(1) {
+  grid-column: span 3;
+  background: linear-gradient(145deg, #ffe4ef, #f8cfe0);
+}
+
+article:nth-child(2) {
+  grid-column: span 3;
+  background: linear-gradient(145deg, #eee6ff, #dcd0fa);
+}
+
+article:nth-child(3) {
+  grid-column: span 2;
+  background: linear-gradient(145deg, #fff2d9, #ffe5bd);
+}
+
+article:nth-child(4) {
+  grid-column: span 2;
+  background: linear-gradient(145deg, #e1f3ff, #cae8f8);
+}
+
+article:nth-child(5) {
+  grid-column: span 2;
+  background: linear-gradient(145deg, #f6e8ff, #ead4f5);
+}
+
+article > span {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 22px;
+}
+
+article h2 {
+  font-family: "Mali", cursive;
+  color: var(--purple);
+  font-size: 1.65rem;
+  margin-bottom: 12px;
+}
+
+article p {
+  color: rgba(89, 76, 98, 0.8);
+  margin-bottom: 28px;
+}
+
+article button {
+  margin-top: auto;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--purple);
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 7px 20px rgba(118, 93, 145, 0.08);
+  transition: 0.25s ease;
+}
+
+article button:hover {
+  background: var(--white);
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 55px 24px;
+  text-align: center;
+  background: rgba(240, 234, 255, 0.55);
+  border-top: 1px solid rgba(118, 93, 145, 0.08);
+}
+
+footer p:first-child {
+  font-family: "Mali", cursive;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--purple);
+  margin-bottom: 12px;
+}
+
+footer p:nth-child(2) {
+  max-width: 620px;
+  margin: 0 auto 12px;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+footer p:last-child {
+  font-size: 0.78rem;
+  color: var(--text-soft);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+  nav {
+    display: none;
+  }
+
+  #home {
+    min-height: 600px;
+    padding-top: 90px;
+  }
+
+  main > section:nth-of-type(2) > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  article:nth-child(n) {
+    grid-column: span 1;
+  }
+
+  article:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  #home {
+    min-height: 560px;
+    padding: 80px 22px 60px;
+  }
+
+  #home h1 {
+    font-size: 3rem;
+  }
+
+  #home > p:nth-of-type(2) {
+    font-size: 1rem;
+  }
+
+  main > section:nth-of-type(2) {
+    padding: 20px 18px 80px;
+  }
+
+  main > section:nth-of-type(2) > div {
+    grid-template-columns: 1fr;
+  }
+
+  article:nth-child(n) {
+    grid-column: auto;
+  }
+
+  article {
+    min-height: 280px;
+    padding: 30px 26px;
+    border-radius: 26px;
+  }
+}
