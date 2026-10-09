@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUMINA JABYAN | Celestial Oracle V8</title>
+<style>
+:root{color-scheme:dark;--gold:#e8c87c;--light:#fff3f8;--purple:#1a0b34}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0,#5e2a73 0,#230e42 35%,#0e071b 100%);color:var(--light);font-family:system-ui,-apple-system,"Noto Sans Thai",sans-serif;min-height:100vh}main{max-width:1150px;margin:auto;padding:28px 16px 70px}.hero{text-align:center;padding:28px 0 20px}.eyebrow{letter-spacing:.22em;color:var(--gold);font-size:.78rem}.hero h1{font-family:Georgia,serif;color:#ffe7a6;font-size:clamp(2.1rem,6vw,4.3rem);letter-spacing:.06em;margin:12px 0 4px;text-shadow:0 0 24px #a767b8}.hero p{color:#f0dce9}.panel{background:#ffffff0d;border:1px solid #f3d4a14a;border-radius:22px;box-shadow:0 12px 40px #0005;padding:clamp(18px,3vw,30px);margin:20px auto;max-width:850px}h2{color:#fbe5ae;margin-top:0}label{display:block;margin-bottom:6px;font-size:.93rem;color:#f8e8fa}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field{min-width:0}input,textarea,select{width:100%;border:1px solid #a886b3;background:#170e2e;color:white;border-radius:12px;padding:13px 12px;font:inherit}textarea{min-height:95px;resize:vertical}.full{grid-column:1/-1}button,.action{font:inherit;cursor:pointer;border:0;border-radius:999px;padding:13px 22px;font-weight:700}.primary{background:linear-gradient(135deg,#f8e2a2,#b9893d);color:#26132c;box-shadow:0 6px 22px #d2a7524d}.secondary{background:#432451;color:white;border:1px solid #bd91b6}.actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:22px}.hint{font-size:.86rem;color:#dac8df;line-height:1.7}.center{text-align:center}.hidden{display:none!important}.grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:clamp(4px,.8vw,10px);margin:22px 0}.deck-card{border:1px solid #c6a16a;border-radius:8px;background:#1b1032;padding:0;aspect-ratio:2/3;overflow:hidden;position:relative;transition:transform .25s,box-shadow .25s;min-width:0}.deck-card:not(:disabled):hover{transform:translateY(-5px);box-shadow:0 0 18px #f4d88a8a}.deck-card:disabled{cursor:default}.deck-card img{width:100%;height:100%;object-fit:contain;display:block}.deck-card.picked{border:2px solid #ffe9a8;box-shadow:0 0 18px #ffd786b0;transform:translateY(-4px)}.deck-card.picked:after{content:attr(data-position);position:absolute;bottom:3px;left:3px;right:3px;background:#1b0d2cd9;color:#ffe7a6;font-size:clamp(8px,1vw,12px);border-radius:5px;padding:3px 0}.results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.result{background:#ffffff0d;border:1px solid #b8946e;border-radius:18px;padding:16px;text-align:center;animation:appear .55s ease both}.result img{display:block;width:min(100%,220px);margin:0 auto 14px;aspect-ratio:2/3;object-fit:contain;border-radius:9px;box-shadow:0 6px 20px #0008}.result h3{color:#f8df9b;margin:8px 0}.result .thai{color:#efd5ec}.result p{text-align:left;line-height:1.85}.tag{color:#e5b8f3;font-size:.85rem}.score{font-size:2.2rem;color:#ffe2a2;font-weight:800}.notice{border-top:1px solid #ffffff33;margin-top:18px;padding-top:16px}a{color:#ffe5a3}@keyframes appear{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@media(max-width:700px){.form-grid{grid-template-columns:1fr}.grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}.results{grid-template-columns:1fr}.result{max-width:450px;width:100%;margin:auto}.hero{padding-top:8px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+.life-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.life-item{padding:20px;border:1px solid #d3ad755c;border-radius:17px;background:linear-gradient(140deg,#45245099,#251339aa)}.life-item h3{color:#ffe2a2;margin:0 0 10px;font-size:1.15rem}.life-item p{line-height:1.9;margin:0;color:#fff0f7}.life-panel{max-width:1150px}@media(max-width:700px){.life-grid{grid-template-columns:1fr}}
+
+
+/* LUMINA JABYAN — pastel celestial luxury skin; oracle logic retained */
+:root{color-scheme:light;--gold:#c79a53;--light:#542a72;--purple:#612b88}
+html{scroll-behavior:smooth}
+body{color:#59376e;background:radial-gradient(ellipse at 16% 12%,#f9e0fb 0,transparent 39%),radial-gradient(ellipse at 85% 22%,#e9d8ff 0,transparent 45%),linear-gradient(145deg,#fff6f8 0%,#ffe7f4 32%,#f4e4ff 67%,#fff8ed 100%);font-family:system-ui,-apple-system,'Noto Sans Thai',sans-serif}
+body:before{content:'✦　　　　✧　　　　　✦　　　　✧　　　　✦';position:fixed;inset:0;pointer-events:none;font-size:34px;letter-spacing:9vw;line-height:20vh;color:#d8ab6d55;z-index:-1}
+main{max-width:1450px;padding:0 22px 80px}
+.sky-ornament{text-align:center;font-size:26px;letter-spacing:1.6em;color:#bb8a4c;opacity:.8;padding:12px 0 0}
+.top-layout{display:grid;grid-template-columns:minmax(290px,.72fr) minmax(0,1.28fr);align-items:end;gap:0;position:relative;min-height:740px}
+.portrait-side{align-self:stretch;position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:680px;overflow:hidden}
+.portrait-side:before{content:'';position:absolute;inset:12% 0 0;background:radial-gradient(ellipse at 50% 50%,#fff6e7 0,#f8d8ef 37%,#e9c9f347 66%,transparent 76%);border-radius:50%}
+.portrait-halo{position:absolute;top:4%;left:7%;font-size:clamp(110px,17vw,260px);font-family:Georgia,serif;color:#d4a251;text-shadow:0 0 25px #fff,0 0 60px #ffd49d;transform:rotate(-18deg);z-index:1}
+.portrait{position:relative;z-index:2;width:100%;max-height:690px;object-fit:contain;object-position:bottom;mix-blend-mode:multiply;mask-image:linear-gradient(to bottom,#000 0%,#000 75%,transparent 100%);filter:drop-shadow(0 12px 28px #ad7ca24a)}
+.portrait-foot{position:absolute;z-index:3;bottom:6%;font-size:32px;color:#d0a05e;letter-spacing:.3em;text-shadow:0 0 15px white}
+.top-content{min-width:0;position:relative;z-index:4;padding:0 0 24px}
+.hero{text-align:center;padding:22px 6px 14px}
+.eyebrow{font-size:.75rem;letter-spacing:.23em;color:#bd8d50}
+.hero h1{font-family:Georgia,'Noto Serif Thai',serif;font-size:clamp(2.2rem,4.5vw,4.8rem);letter-spacing:0;margin:10px 0 0;color:#7e3b8b;text-shadow:0 2px 0 #ffeacb,0 0 24px #eab0ed}
+.hero .roman{font-size:.85rem;letter-spacing:.21em;color:#b78347;font-weight:700;margin:2px 0 14px}
+.hero h2{font-size:clamp(1.05rem,2vw,1.55rem);color:#71379b;margin:4px 0 8px}
+.hero p{color:#845f91;line-height:1.8;margin:0}
+.panel{background:linear-gradient(145deg,#fffdfbed,#fff5faed);border:1px solid #dcb878;box-shadow:0 14px 45px #b98fbc30,inset 0 0 0 5px #ffffff75;border-radius:26px;color:#59376e;max-width:none}
+#formSection{margin:0 0 20px;padding:clamp(20px,3vw,34px);position:relative}
+#formSection:before,#formSection:after{position:absolute;content:'✧';color:#d2a45e;font-size:38px;line-height:1}
+#formSection:before{top:-12px;left:12px}#formSection:after{bottom:-10px;right:12px}
+#formSection h2{text-align:center}
+h2{color:#83409b}label{color:#743b8b;font-weight:700}
+input,textarea,select{background:#fffdfd;color:#5d3274;border:1px solid #e4cfe9;box-shadow:inset 0 1px 3px #8b569410;border-radius:11px}
+input:focus,textarea:focus,select:focus{outline:2px solid #d3a0df;outline-offset:1px}
+input::placeholder,textarea::placeholder{color:#b29abb}
+.primary{background:linear-gradient(110deg,#f6a7dc,#a65ad0 50%,#ed83bd);color:white;box-shadow:0 8px 23px #b869bf55;border:1px solid #f3c7a5;text-shadow:0 1px 2px #7a357b}
+.secondary{background:#fff1f8;color:#783c91;border:1px solid #ca94b9}
+.hint{color:#967c9d}.hint.notice{border-top:1px solid #e9d4e7;padding-top:18px}
+#deckSection{margin-top:24px;position:relative}#deckSection:before{content:'☾　✧　☽';display:block;text-align:center;color:#bd8d50;font-size:36px;letter-spacing:.7em}
+#deckSection>.panel{max-width:920px;margin:12px auto 26px}
+.grid{gap:clamp(5px,.9vw,12px)}
+.deck-card{background:#542769;border:1px solid #d6a962;box-shadow:0 3px 10px #9664a333}
+.deck-card:not(:disabled):hover{box-shadow:0 0 20px #d49ad6}
+.deck-card.picked{border-color:#b56cbb;box-shadow:0 0 20px #a66ab6}
+.results{gap:20px}.result,.life-item{background:linear-gradient(150deg,#fffafc,#f9edff);border:1px solid #d8b579;box-shadow:0 8px 22px #bd99c522;color:#603d73}
+.result h3,.life-item h3{color:#823e95}.result p,.life-item p{color:#654d73}
+.score{color:#9852a2}.tag{color:#834393}
+#resultSection>.panel:first-child{max-width:920px}
+@media(max-width:900px){.top-layout{grid-template-columns:1fr;min-height:0}.portrait-side{min-height:300px;max-height:450px}.portrait{max-height:450px;width:auto;max-width:100%}.portrait-halo{top:0;left:24%}.top-content{padding:0}.hero{padding:14px 4px 18px}#formSection{margin:0}.grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:560px){main{padding:0 12px 50px}.portrait-side{min-height:280px;max-height:330px}.portrait{max-height:340px}.hero h1{font-size:2.35rem}.hero p br{display:none}.form-grid{grid-template-columns:1fr}.grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.panel{padding:18px}.results,.life-grid{grid-template-columns:1fr}.portrait-halo{font-size:135px}.sky-ornament{letter-spacing:.6em}}
+
+
+/* v3: seamless portrait, luminous celestial background */
+body{background:radial-gradient(ellipse at 5% 8%,#ffe6f4 0%,transparent 42%),radial-gradient(ellipse at 93% 14%,#e7cafa 0%,transparent 48%),radial-gradient(ellipse at 60% 95%,#f7dbf5 0%,transparent 54%),linear-gradient(125deg,#fff8f2,#fce6f6 43%,#f0ddff 76%,#fff7ed)}
+.top-layout{grid-template-columns:minmax(320px,.85fr) minmax(0,1.15fr);align-items:center;min-height:680px}
+.portrait-side{min-height:640px;overflow:visible;isolation:isolate;align-items:center}
+.portrait-side:before{inset:0;background:radial-gradient(ellipse at 51% 56%,#ffe6ef 0%,#f7d8f4 40%,#f1d9ff55 62%,transparent 77%);filter:blur(14px)}
+.portrait-side:after{content:'✦  ✧  ☾  ✧  ✦';position:absolute;bottom:4%;left:4%;right:4%;z-index:4;text-align:center;color:#cfa05d;font-size:30px;letter-spacing:.25em;text-shadow:0 0 14px #fff}
+.portrait{width:110%;max-width:unset;max-height:680px;object-fit:contain;object-position:center;mix-blend-mode:normal;-webkit-mask-image:radial-gradient(ellipse 52% 53% at 50% 49%,black 52%,#000b 69%,transparent 96%);mask-image:radial-gradient(ellipse 52% 53% at 50% 49%,black 52%,#000b 69%,transparent 96%);filter:drop-shadow(0 15px 32px #b78cb04d)}
+.portrait-halo{top:1%;left:0;z-index:3;opacity:.83}.portrait-foot{display:none}
+.top-content{padding:20px 0 24px}.hero{padding:12px 6px 26px}
+@media(max-width:900px){.top-layout{grid-template-columns:1fr;min-height:0}.portrait-side{min-height:390px;max-height:480px;overflow:hidden}.portrait{width:min(520px,100%);max-height:480px}.portrait-side:after{bottom:1%}.portrait-halo{left:18%}.top-content{padding:0}}
+@media(max-width:560px){.portrait-side{min-height:290px;max-height:350px}.portrait{max-height:350px}.portrait-side:after{font-size:19px}}
+
+/* Final polish: warm natural reading voice and seamlessly fading portrait */
+.portrait-side{overflow:hidden}
+.portrait{mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 59% 55% at 50% 44%,#000 46%,#000e 65%,transparent 97%);mask-image:radial-gradient(ellipse 59% 55% at 50% 44%,#000 46%,#000e 65%,transparent 97%)}
+.life-item p,.result p{font-size:1.01rem;line-height:2.05;overflow-wrap:anywhere}.life-item p+p{margin-top:13px}
+.life-item{padding:23px}.life-item h3{margin-bottom:12px}
+#summary{max-width:900px;margin:15px auto;line-height:1.95}
+@media(max-width:900px){.portrait-side{overflow:hidden}}
+</style>
+<style>
+/* V9: short readings and prominent conversion links */
+.site-nav{max-width:1150px;margin:0 auto 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.home-link{color:#76398b;background:#fff8ff;border:1px solid #dfbddc;border-radius:999px;padding:12px 20px;font-weight:750;text-decoration:none}
+.booking-link{display:inline-flex;align-items:center;justify-content:center;text-align:center;padding:15px 24px;background:linear-gradient(125deg,#9a3bb5,#6c268b);color:#fff!important;border-radius:999px;text-decoration:none!important;font-weight:800;box-shadow:0 8px 20px #762b8c55;transition:transform .15s,box-shadow .15s}
+.booking-link:hover{transform:translateY(-2px);box-shadow:0 12px 26px #762b8c66}
+.booking-strip{margin:14px auto 22px;max-width:940px;border:1px solid #e2b66d;background:linear-gradient(125deg,#fffaf4,#faeafb);border-radius:20px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#6e397c}
+.booking-strip strong,.booking-strip span{display:block}.booking-strip strong{font-size:1.13rem}.booking-strip span{margin-top:5px;font-size:.93rem}
+.booking-mid{text-align:center;margin:20px auto 12px;padding:20px;color:#773e8b}.booking-mid p{font-size:1.12rem;font-weight:750}
+.life-item p{line-height:1.85;margin:0 0 7px;font-size:1rem}.life-item p+p{margin-top:7px}.life-item{padding:19px 21px}.life-item h3{margin-bottom:9px}
+.result p{line-height:1.8;font-size:.95rem}
+#summary{max-width:720px;line-height:1.8}
+@media(max-width:650px){.site-nav{justify-content:center}.booking-strip{flex-direction:column;text-align:center}.booking-link{width:100%}.site-nav .booking-link,.site-nav .home-link{width:auto;font-size:.88rem;padding:12px 15px}}
+</style>
+</head>
+<body><main><nav class="site-nav" aria-label="เมนูหลัก"><a href="/" class="home-link">⌂ กลับหน้า Home</a></nav><div class="sky-ornament" aria-hidden="true">✦　☾　✧　✦</div>
+<div class="top-layout"><div class="portrait-side"><div class="portrait-halo" aria-hidden="true">☾</div><img class="portrait" src="images/morple-portrait.jpg" alt="หมอเปิ้ลจับญาณ" onerror="this.style.display='none'"><div class="portrait-foot" aria-hidden="true">✦ ✧ ☽ ✧ ✦</div></div><div class="top-content"><header class="hero"><div class="eyebrow">✦ CELESTIAL ORACLE · 50 CARDS ✦</div><h1>หมอเปิ้ลจับญาณ</h1><div class="roman">MOR PLE JABYAN · LUMINA JABYAN</div><h2>เปิดไพ่ 3 ใบ รับคำทำนายเฉพาะคุณ</h2><p>ตั้งจิตอธิษฐาน เลือกไพ่ และรับแนวทางจากจักรวาล<br>เพื่อใช้เป็นข้อคิดในการใช้ชีวิตอย่างมีสติและพลังใจ</p></header>
+<section id="formSection" class="panel"><h2>✦ กรอกข้อมูลเพื่อรับคำทำนาย</h2><form id="readerForm"><div class="form-grid"><div class="field"><label for="first">ชื่อจริง</label><input id="first" maxlength="70" autocomplete="given-name" required></div><div class="field"><label for="last">นามสกุล</label><input id="last" maxlength="70" autocomplete="family-name" required></div><div class="field"><label for="nick">ชื่อเล่น</label><input id="nick" maxlength="50" required></div><div class="field"><label for="dob">วันเดือนปีเกิด</label><input id="dob" type="date" required></div><div class="field full"><label for="zodiac">ราศี (คำนวณตามช่วงวันเกิดแบบไทย)</label><select id="zodiac" required><option value="">กรุณาเลือกวันเกิดก่อน</option></select></div><div class="field full"><label for="wish">คำอธิษฐานหรือคำถามที่อยากให้ไพ่สะท้อน</label><textarea id="wish" maxlength="600" placeholder="เช่น ช่วงนี้ควรให้ความสำคัญกับเรื่องงานหรือความสัมพันธ์อย่างไร" required></textarea></div></div><div class="actions"><button class="primary" type="submit">🪷 เริ่มดูดวง เปิดไพ่ 3 ใบ</button></div><p class="hint center">ข้อมูลที่กรอกใช้สำหรับแสดงคำทำนายบนอุปกรณ์นี้เท่านั้น ไม่ส่งไปยังเซิร์ฟเวอร์หรือจัดเก็บในฐานข้อมูล</p></form></section>
+</div></div><section id="deckSection" class="hidden"><div class="panel center"><h2>☾ เลือกไพ่จากพลังจักรวาล ☽</h2><p id="instruction">เลือกไพ่ใบที่ 1 จากสำรับแห่งแสง</p><p class="hint">ไพ่ 50 ใบถูกสับใหม่ในแต่ละครั้ง เลือกไพ่ที่รู้สึกเชื่อมโยงกับคุณทีละใบ</p></div><div id="deck" class="grid" aria-label="ไพ่คว่ำ 50 ใบ"></div></section>
+<section id="resultSection" class="hidden"><div class="panel center"><h2>✦ หมอเปิ้ลเปิดไพ่ให้คุณ · คำทำนาย 6 ด้าน</h2><p id="greeting"></p><p id="wishEcho" class="hint"></p></div><div id="results" class="results"></div><div class="booking-strip"><div><strong>ทุกคำถามมีรายละเอียดที่ต่างกัน</strong><span>พูดคุยเรื่องที่คุณกังวลกับหมอเปิ้ลแบบส่วนตัว</span></div><a href="#" class="booking-link" data-booking>✦ จองคิวดูดวงส่วนตัว</a></div><section class="panel life-panel"><h2 class="center">✦ คำพยากรณ์เฉพาะด้าน</h2><div id="lifeReadings" class="life-grid"></div></section><div class="booking-mid"><p>เรื่องที่ค้างคาใจ อาจชัดเจนขึ้นเมื่อได้พูดคุยกัน</p><a href="#" class="booking-link" data-booking>✦ จองคิวดูดวงกับหมอเปิ้ล</a></div><div class="panel center"><h2>ภาพรวมจากไพ่ทั้งสาม</h2><div id="score" class="score"></div><p id="summary"></p><p class="hint notice">คำพยากรณ์เป็นแนวทางตามความเชื่อส่วนบุคคล ให้พิจารณาโอกาสและเรื่องที่ควรระวัง โปรดใช้วิจารณญาณและข้อมูลจริงประกอบการตัดสินใจ หมอเปิ้ลแนะนำให้เปิดไพ่วันละครั้ง แล้วให้เวลากับการทบทวนคำแนะนำก่อนเปิดครั้งต่อไป</p><div class="actions"><button id="restart" class="secondary" type="button">เปิดไพ่ใหม่</button><a class="booking-link" id="booking" href="#" data-booking>✦ จองคิวดูดวงส่วนตัว</a><a class="action secondary" href="/" style="text-decoration:none">⌂ กลับหน้า Home</a></div><p id="bookingHint" class="hint">ติดต่อดูดวงส่วนตัวกับหมอเปิ้ลได้ผ่านช่องทางที่ระบุในเว็บไซต์</p></div></section>
+</main><script>
+'use strict';
+const CARD_NAMES=[
+['The Sun Crown','มงกุฎแห่งแสง','ความมั่นใจและการยอมรับ','แสดงศักยภาพอย่างอ่อนโยน'],['Moon Whisper','กระซิบจันทร์','สัญชาตญาณและความรู้สึก','รับฟังเสียงภายในก่อนตัดสินใจ'],['The Sacred Cat','แมวศักดิ์สิทธิ์','ความเป็นอิสระและการสังเกต','รักษาขอบเขตของตนเอง'],['Spirit Deer','กวางวิญญาณ','ความอ่อนโยนและโอกาสใหม่','ก้าวไปอย่างมั่นคงไม่เร่งรีบ'],['Destiny Wheel','วงล้อโชคชะตา','การเปลี่ยนผ่านของชีวิต','ยืดหยุ่นกับสิ่งที่ควบคุมไม่ได้'],['Lotus Awakening','ดอกบัวตื่นรู้','การเติบโตจากประสบการณ์','ปล่อยสิ่งเก่าที่ไม่จำเป็น'],['Crystal Castle','ปราสาทคริสตัล','เป้าหมายและรากฐาน','วางแผนระยะยาวอย่างเป็นขั้นตอน'],['The Golden Hour','เวลาทอง','จังหวะและโอกาส','ลงมือกับเรื่องสำคัญในเวลาที่เหมาะ'],['Heart of Light','หัวใจแห่งแสง','ความเมตตาและความจริงใจ','ดูแลใจตนเองควบคู่กับคนอื่น'],['Voyage','การเดินทาง','การค้นพบและโลกใหม่','เปิดรับบทเรียนจากการเปลี่ยนแปลง'],
+['Shadow Guardian','ผู้พิทักษ์เงา','การปกป้องและความกลัว','แยกความกังวลออกจากข้อเท็จจริง'],['Temple of Soul','วิหารดวงวิญญาณ','ความสงบและคุณค่าภายใน','ให้เวลากับการทบทวนตนเอง'],['Blossom Kitten','ลูกแมวแห่งโชค','ความสดใสและโอกาสเล็ก ๆ','สังเกตสิ่งดีใกล้ตัว'],['Balance','ความสมดุล','การจัดสรรพลังและเวลา','รักษาสมดุลระหว่างหน้าที่กับการพัก'],['Mirror of Truth','กระจกแห่งความจริง','ความชัดเจนและการยอมรับ','มองสถานการณ์ตามจริง'],['Rose of Love','กุหลาบแห่งรัก','ความสัมพันธ์และการให้คุณค่า','สื่อสารความรู้สึกด้วยความเคารพ'],['Starlight Key','กุญแจแสงดาว','คำตอบและทางเลือก','ค้นหาข้อมูลก่อนเปิดประตูบานใหม่'],['Eternal Path','เส้นทางนิรันดร์','ความต่อเนื่องและความอดทน','ก้าวเล็ก ๆ แต่สม่ำเสมอ'],['Twin Flame','เปลวรักคู่','การเชื่อมโยงและความเข้มข้น','มองความสัมพันธ์อย่างมีสติ'],['Cloud Garden','สวนเมฆา','จินตนาการและการพักฟื้น','เติมแรงใจผ่านความสุขเรียบง่าย'],
+['Heaven Gate','ประตูสวรรค์','การเปิดรับสิ่งใหม่','เตรียมตัวก่อนรับโอกาส'],['Secret Moon','จันทร์แห่งความลับ','สิ่งที่ยังไม่ชัดเจน','อย่ารีบสรุปจากข้อมูลเพียงด้านเดียว'],['Lucky Flower','ดอกไม้แห่งโชค','ความหวังและความงอกงาม','ดูแลโอกาสเล็ก ๆ ให้เติบโต'],['Galaxy Compass','เข็มทิศจักรวาล','ทิศทางและเป้าหมาย','เลือกทางที่สอดคล้องกับคุณค่า'],['Waterfall of Blessing','น้ำตกแห่งพร','การไหลเวียนและการปลดปล่อย','ผ่อนคลายความคาดหวังที่กดดัน'],['Love Key','กุญแจแห่งรัก','การเปิดใจและความเข้าใจ','พูดคุยด้วยความตรงไปตรงมา'],['Healing Forest','ป่าแห่งการเยียวยา','การฟื้นฟูและการพักใจ','ให้พื้นที่กับการฟื้นตัว'],['Wish Window','หน้าต่างคำอธิษฐาน','มุมมองและความหวัง','เปลี่ยนความปรารถนาเป็นแผนที่ทำได้'],['Tree of Life','ต้นไม้แห่งชีวิต','รากฐานและการเติบโต','ลงทุนในสิ่งที่ยั่งยืน'],['Guardian Bear','หมีผู้พิทักษ์','ความมั่นคงและการดูแล','ปกป้องสิ่งสำคัญโดยไม่แบกทุกอย่าง'],
+['Soul Lantern','โคมวิญญาณ','แสงนำทางในความไม่แน่นอน','เริ่มจากสิ่งที่เห็นชัดที่สุด'],['Crystal Mountain','ภูเขาคริสตัล','ความมุ่งมั่นและอุปสรรค','แบ่งเป้าหมายใหญ่เป็นขั้นเล็ก'],['The Chariot','รถแห่งชัยชนะ','แรงขับและการควบคุมทิศทาง','เดินหน้าด้วยวินัย'],['Butterfly Rebirth','ผีเสื้อเกิดใหม่','การเปลี่ยนแปลงและการเริ่มใหม่','ยอมให้ตัวเองเติบโตต่างจากเดิม'],['Wise Owl','นกฮูกปัญญา','ความรู้และการไตร่ตรอง','ขอคำแนะนำจากแหล่งที่เชื่อถือได้'],['Divine Door','ประตูเทพ','จุดเปลี่ยนและโอกาส','กล้าเลือกเมื่อเตรียมพร้อม'],['Sunset Tree','ต้นไม้แห่งอรุณ','การสิ้นสุดเพื่อเริ่มต้น','ขอบคุณอดีตและวางสิ่งที่หมดเวลา'],['Abundance','ความอุดมสมบูรณ์','ทรัพยากรและความพอเพียง','บริหารสิ่งที่มีอย่างเห็นคุณค่า'],['Eternal Love','รักนิรันดร์','ความผูกพันและความสม่ำเสมอ','สร้างความไว้วางใจด้วยการกระทำ'],['Star Bridge','สะพานดาว','การเชื่อมต่อและความร่วมมือ','เปิดรับความช่วยเหลืออย่างเหมาะสม'],
+['Miracle Rabbit','กระต่ายปาฏิหาริย์','ความคล่องตัวและความประหลาดใจ','พร้อมปรับตัวเมื่อโอกาสมา'],['Wish Star','ดาวแห่งคำปรารถนา','ความฝันและแรงบันดาลใจ','กำหนดเป้าหมายที่วัดผลได้'],['Phoenix Rise','นกฟีนิกซ์','การฟื้นคืนและความกล้าหาญ','ใช้บทเรียนเก่าเริ่มต้นใหม่'],['Dragon of Wealth','มังกรแห่งทรัพย์','ความสามารถและการจัดการทรัพย์','วางแผนการเงินอย่างรอบคอบ'],['Twin Swan','หงส์คู่','ความร่วมมือและความกลมเกลียว','รับฟังกันด้วยใจเปิดกว้าง'],['Moon Lotus','บัวจันทร์','ความสงบและการเยียวยา','พักใจโดยไม่รู้สึกผิด'],['Celestial Tower','หอคอยสวรรค์','มุมมองที่สูงขึ้น','ถอยมามองภาพรวมก่อนลงมือ'],['Blessing Bell','ระฆังแห่งพร','ข่าวสารและการตื่นรู้','ใส่ใจกับสัญญาณจากความเป็นจริง'],['Universe Node','จุดเชื่อมจักรวาล','ความสัมพันธ์ของเหตุและผล','มองผลกระทบของแต่ละทางเลือก'],['The New Dawn','รุ่งอรุณใหม่','ความหวังและการเริ่มต้น','เริ่มต้นใหม่ด้วยบทเรียนที่มี']
+];
+const signs=[['มังกร',115,212],['กุมภ์',213,314],['มีน',315,412],['เมษ',413,514],['พฤษภ',515,614],['เมถุน',615,714],['กรกฎ',715,815],['สิงห์',816,916],['กันย์',917,1016],['ตุล',1017,1115],['พิจิก',1116,1215],['ธนู',1216,1231],['ธนู',101,114]];
+const $=id=>document.getElementById(id);const positions=['พลังพื้นฐาน','สิ่งที่ควรใส่ใจ','แนวทางข้างหน้า'];let order=[],selected=[],reader=null;
+function signFromDate(value){if(!value)return '';const parts=value.split('-');const md=Number(parts[1])*100+Number(parts[2]);return (signs.find(s=>md>=s[1]&&md<=s[2])||[])[0]||''}
+$('dob').addEventListener('change',()=>{const s=signFromDate($('dob').value);$('zodiac').replaceChildren(new Option(s?'ราศี'+s:'กรุณาเลือกวันเกิดก่อน',s))});
+function shuffledCards(){const a=Array.from({length:50},(_,i)=>i);for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+$('readerForm').addEventListener('submit',e=>{e.preventDefault();if(!e.target.reportValidity())return;reader={first:$('first').value.trim(),last:$('last').value.trim(),nick:$('nick').value.trim(),dob:$('dob').value,zodiac:$('zodiac').value,wish:$('wish').value.trim()};if(!reader.first||!reader.last||!reader.nick||!reader.wish||!reader.zodiac)return;order=shuffledCards();selected=[];$('deck').replaceChildren();order.forEach((idx,slot)=>{const b=document.createElement('button');b.type='button';b.className='deck-card';b.setAttribute('aria-label',`เลือกไพ่คว่ำตำแหน่งที่ ${slot+1}`);const img=document.createElement('img');img.src='images/cards/card-back.webp';img.alt='หลังไพ่ LUMINA JABYAN';img.loading='lazy';b.append(img);b.addEventListener('click',()=>pick(b,idx));$('deck').append(b)});$('formSection').classList.add('hidden');$('resultSection').classList.add('hidden');$('deckSection').classList.remove('hidden');$('instruction').textContent='เลือกไพ่ใบที่ 1 จากสำรับแห่งแสง';window.scrollTo({top:0,behavior:'smooth'})});
+function pick(button,idx){if(selected.length>=3||button.disabled)return;const position=selected.length;selected.push(idx);button.disabled=true;button.classList.add('picked');button.dataset.position=positions[position];const img=button.querySelector('img');img.src=`images/cards/card-${String(idx+1).padStart(2,'0')}.webp`;img.alt=CARD_NAMES[idx][0];button.setAttribute('aria-label',`${positions[position]}: ${CARD_NAMES[idx][1]}`);if(selected.length<3){$('instruction').textContent=`เลือกไพ่ใบที่ ${selected.length+1} — ${positions[selected.length]}`}else{$('instruction').textContent='ไพ่ครบ 3 ใบแล้ว กำลังเผยคำทำนาย';setTimeout(showResults,700)}}
+const LIFE_AREAS=[
+ {icon:'💼',title:'การงาน'}, {icon:'💰',title:'การเงิน'},
+ {icon:'💕',title:'ความรัก'}, {icon:'🏡',title:'ครอบครัว'},
+ {icon:'🌿',title:'สุขภาพ'}, {icon:'✨',title:'สิ่งที่หมอเปิ้ลแนะนำ'}
+];
+// V6 — คำทำนายเป็นภาษาพูดของหมอเปิ้ล แยกประเด็นแต่ละด้านโดยไม่ต่อเศษประโยคจากไพ่
+// ไพ่แต่ละใบมีพลังหลักและคำเตือนเฉพาะ ใช้ร่วมกับตำแหน่งอดีต ปัจจุบัน อนาคต
+const CARD_STORIES = [
+ ['กล้าที่จะให้คนอื่นเห็นความสามารถของตัวเอง','อย่ากดดันตัวเองให้ต้องเก่งทุกอย่าง'],
+ ['มีเรื่องในใจที่ยังไม่ได้พูดออกมา','อย่าตัดสินใจเพราะความระแวงเพียงอย่างเดียว'],
+ ['ต้องการพื้นที่ส่วนตัวและความชัดเจน','อย่าปิดใจจนคนที่หวังดีเข้ามาไม่ถึง'],
+ ['ความอ่อนโยนจะช่วยพาไปพบโอกาสใหม่','อย่าใจดีจนลืมปกป้องตัวเอง'],
+ ['กำลังอยู่ในช่วงเปลี่ยนจังหวะชีวิต','อย่าฝืนควบคุมสิ่งที่อยู่นอกเหนือมือเรา'],
+ ['เริ่มเข้าใจตัวเองจากเรื่องที่เคยเจ็บ','อย่าเอาความผิดพลาดเก่ามาตัดสินตัวเอง'],
+ ['อยากสร้างหลักให้ชีวิตมั่นคงขึ้น','อย่ามองแต่ภาพฝันจนลืมรายละเอียด'],
+ ['มีจังหวะดีให้ลงมือในสิ่งที่เตรียมไว้','อย่ารอจนโอกาสผ่านเพราะกลัวไม่พร้อม'],
+ ['ความจริงใจเป็นพลังสำคัญในชีวิต','อย่าให้มากจนตัวเองหมดแรง'],
+ ['อยากเปลี่ยนบรรยากาศหรือเริ่มเส้นทางใหม่','อย่าทิ้งเรื่องค้างไว้โดยไม่วางแผน'],
+ ['กำลังปกป้องหัวใจจากเรื่องที่เคยเกิดขึ้น','อย่าให้ความกลัวขวางโอกาสดี'],
+ ['ต้องการความสงบเพื่อฟังใจตัวเอง','อย่าเก็บตัวจนไม่ยอมขอความช่วยเหลือ'],
+ ['ความสุขเล็ก ๆ กำลังช่วยเติมกำลังใจ','อย่ามองข้ามโอกาสที่ดูธรรมดา'],
+ ['หลายเรื่องกำลังแย่งเวลาและพลังของเรา','อย่ารับปากทุกคนจนไม่มีเวลาให้ตัวเอง'],
+ ['ถึงเวลามองความจริงให้ชัดกว่าเดิม','อย่าเชื่อเพียงคำพูดโดยไม่ดูการกระทำ'],
+ ['หัวใจกำลังต้องการการดูแลและความเข้าใจ','อย่าฝืนความสัมพันธ์เพราะกลัวอยู่คนเดียว'],
+ ['มีทางเลือกใหม่ที่ต้องใช้ข้อมูลเปิดทาง','อย่ารีบตกลงก่อนอ่านเงื่อนไข'],
+ ['สิ่งที่ทำต่อเนื่องกำลังค่อย ๆ ออกผล','อย่าท้อเพราะยังไม่เห็นผลทันใจ'],
+ ['มีความรู้สึกแรงกล้าต่อคนหรือเรื่องบางเรื่อง','อย่าให้ความผูกพันกลายเป็นการยึดติด'],
+ ['ร่างกายและใจอยากได้เวลาพักฟื้น','อย่ารู้สึกผิดเวลาต้องหยุดพัก'],
+ ['เหมือนมีประตูใหม่กำลังเปิดให้ลองเดิน','อย่าก้าวเข้าไปโดยไม่ดูความพร้อม'],
+ ['มีรายละเอียดบางอย่างที่ยังไม่เปิดเผย','อย่ารีบสรุปเรื่องที่ยังรู้ไม่ครบ'],
+ ['สิ่งดี ๆ เริ่มต้นจากโอกาสเล็กน้อย','อย่าประมาทเรื่องเล็กที่ต้องดูแล'],
+ ['กำลังตามหาทิศทางที่เหมาะกับชีวิต','อย่าเดินตามความคาดหวังของคนอื่นทั้งหมด'],
+ ['มีบางเรื่องที่ถึงเวลาต้องปล่อยให้ไหลผ่าน','อย่ากอดความเสียใจไว้จนไม่มีที่ให้ความสุข'],
+ ['การเปิดใจคุยจะช่วยคลี่คลายเรื่องค้างคา','อย่าคิดว่าอีกฝ่ายต้องรู้ใจโดยไม่พูด'],
+ ['กำลังต้องการการเยียวยาอย่างค่อยเป็นค่อยไป','อย่าเร่งให้ตัวเองหายเหนื่อยทันที'],
+ ['ความหวังจะชัดขึ้นเมื่อเปลี่ยนเป็นแผน','อย่ารอปาฏิหาริย์โดยไม่ลงมือ'],
+ ['เรื่องที่วางรากฐานไว้จะค่อย ๆ เติบโต','อย่าตัดสินผลจากเวลาเพียงสั้น ๆ'],
+ ['มีคนหรือหน้าที่ที่อยากดูแลอย่างเต็มที่','อย่าแบกภาระของทุกคนไว้คนเดียว'],
+ ['มีแสงเล็ก ๆ ช่วยให้เห็นทางในความไม่แน่ใจ','อย่าต้องการคำตอบทุกเรื่องพร้อมกัน'],
+ ['กำลังปีนผ่านอุปสรรคที่ต้องใช้ความอดทน','อย่าหักโหมจนหมดแรงกลางทาง'],
+ ['มีแรงผลักดันอยากเอาชนะปัญหา','อย่ารีบจนพลาดสิ่งสำคัญระหว่างทาง'],
+ ['ชีวิตกำลังเปลี่ยนจากบทเดิมไปบทใหม่','อย่ากลัวการเป็นตัวเองในแบบที่เปลี่ยนไป'],
+ ['ควรใช้ความรู้และประสบการณ์ช่วยตัดสินใจ','อย่าเชื่อคำแนะนำโดยไม่ตรวจสอบ'],
+ ['มีทางเลือกสำคัญที่รอความกล้า','อย่าตัดสินใจเพราะถูกกดดัน'],
+ ['บางบทกำลังจบเพื่อให้เริ่มใหม่ได้','อย่ายึดติดกับสิ่งที่หมดเวลาแล้ว'],
+ ['มีทรัพยากรหรือความสามารถที่ต่อยอดได้','อย่าใช้เกินกำลังเพราะคิดว่ามีเหลือ'],
+ ['ความสัมพันธ์ที่ดีต้องอาศัยการดูแลสม่ำเสมอ','อย่าปล่อยให้ความเคยชินแทนความใส่ใจ'],
+ ['การร่วมมือกับคนอื่นจะช่วยให้ไปได้ไกล','อย่าคิดว่าต้องทำทุกอย่างคนเดียว'],
+ ['โอกาสอาจมาในรูปแบบที่ไม่คาดคิด','อย่าเปลี่ยนแผนทุกครั้งที่มีสิ่งใหม่'],
+ ['ความฝันยังมีคุณค่าและควรมีขั้นตอนรองรับ','อย่าคาดหวังผลโดยไม่กำหนดเป้าหมาย'],
+ ['มีแรงจะลุกขึ้นใหม่หลังเรื่องยาก','อย่าเอาบาดแผลเดิมมาทำให้กลัวอนาคต'],
+ ['เรื่องทรัพย์สินและความสามารถกำลังเด่น','อย่าหลงเชื่อทางลัดที่เสี่ยงเกินไป'],
+ ['ความเข้าใจกันจะพาเรื่องยากให้เบาลง','อย่าเอาชนะกันจนลืมว่ารักกัน'],
+ ['หัวใจต้องการความสงบและการพัก','อย่าฝืนทำเป็นเข้มแข็งตลอดเวลา'],
+ ['ถึงเวลาถอยมามองภาพใหญ่','อย่าจมกับรายละเอียดจนลืมเป้าหมาย'],
+ ['มีข่าวหรือข้อมูลที่ควรตั้งใจรับฟัง','อย่าเชื่อทุกอย่างทันทีโดยไม่ตรวจสอบ'],
+ ['การตัดสินใจหนึ่งเรื่องส่งผลต่ออีกหลายเรื่อง','อย่ามองเฉพาะผลดีระยะสั้น'],
+ ['กำลังมีโอกาสเริ่มต้นด้วยมุมมองใหม่','อย่ากลับไปใช้วิธีเดิมกับปัญหาเดิม']
+];
+
+const LIFE_SCRIPTS=[
+ {intro:['เรื่องงาน หมอเปิ้ลเห็นว่าช่วงนี้คุณมีอะไรให้คิดหลายอย่างนะคะ','มาดูเรื่องงานกันค่ะ หมอรู้สึกว่าเรื่องนี้กำลังใช้พลังของคุณไม่น้อยเลย','สำหรับการงาน หมออยากให้คุณมองทั้งสิ่งที่หวังและสิ่งที่ทำอยู่จริง ๆ ค่ะ'],
+   positive:['ถ้ากำลังรอโอกาสใหม่ ลองเตรียมผลงานและพูดให้คนเห็นความสามารถของเรา','งานที่ค้างอยู่มีโอกาสคืบหน้า ถ้าแบ่งทำทีละเรื่องและคุยกับคนที่เกี่ยวข้องให้ชัด','สิ่งที่คุณตั้งใจทำมาตลอดไม่สูญเปล่า ลองกลับมาดูว่าจุดแข็งของตัวเองอยู่ตรงไหน'],
+   caution:['แต่หมอขอเตือนเรื่องการรับงานเกินกำลัง อย่าเพิ่งตอบตกลงเพราะเกรงใจ','หากมีข้อเสนอใหม่ อย่าลืมตรวจสอบค่าตอบแทน หน้าที่ และเงื่อนไขให้ครบ','ระวังการตัดสินใจตอนเหนื่อยหรืออารมณ์ไม่ดี เพราะอาจทำให้มองทางเลือกแคบลง'],
+   advice:['หมออยากให้เลือกงานสำคัญที่สุดหนึ่งอย่าง แล้วเริ่มทำให้เห็นผลก่อนนะคะ','ลองคุยกับคนร่วมงานด้วยความชัดเจน เรื่องที่ค้างคาอาจเบาลงค่ะ','เชื่อในฝีมือตัวเองได้ค่ะ แต่ไม่จำเป็นต้องพิสูจน์คุณค่าด้วยการเหนื่อยอยู่คนเดียว']},
+ {intro:['เรื่องเงิน หมอเปิ้ลอยากให้ดูอย่างรอบคอบเป็นพิเศษนะคะ','การเงินช่วงนี้ หมออยากให้คุณตั้งหลักก่อน ไม่ต้องรีบวิ่งตามทุกโอกาสค่ะ','มาดูเรื่องการเงินกันค่ะ ไพ่ชวนให้กลับมาดูความมั่นคงของตัวเอง'],
+   positive:['ถ้ากำลังมองหารายได้เพิ่ม ลองเริ่มจากทักษะหรือสิ่งที่มีอยู่แล้ว','ยังมีทางค่อย ๆ จัดการภาระได้ โดยเริ่มจากแยกเรื่องจำเป็นกับเรื่องที่รอได้','การวางแผนทีละขั้นจะช่วยให้เห็นช่องทางที่ก่อนหน้านี้มองไม่ออก'],
+   caution:['หมอไม่อยากให้เสี่ยงเงินก้อนเพียงเพราะมีคนรับปากว่าจะได้ผลเร็ว','ระวังรายจ่ายเล็ก ๆ ที่รวมกันแล้วกลายเป็นภาระใหญ่','ถ้าจะให้ใครยืมหรือลงทุน ขอให้ดูเอกสารและความเสี่ยงจริงก่อน'],
+   advice:['ลองจดเงินเข้าเงินออกในเดือนนี้ แล้วเลือกแก้จุดที่หนักที่สุดก่อนค่ะ','หมออยากให้เก็บเงินสำรองเท่าที่ทำได้ และไม่กดดันตัวเองจนเกินไป','อย่าเพิ่งหมดหวังนะคะ การตั้งหลักเล็ก ๆ แต่ต่อเนื่องสำคัญกว่าการเสี่ยงครั้งเดียว']},
+ {intro:['มาถึงเรื่องหัวใจ หมอเปิ้ลอยากให้คุณฟังความรู้สึกตัวเองด้วยนะคะ','เรื่องความรัก หมอเห็นว่าความชัดเจนสำคัญกว่าคำพูดหวาน ๆ ค่ะ','ความรักรอบนี้ หมออยากให้ดูว่าอยู่กับใครแล้วใจเราสบายจริง ๆ'],
+   positive:['ถ้ามีคู่แล้ว ยังมีพื้นที่ให้ปรับความเข้าใจกัน ส่วนคนโสดลองเปิดใจโดยไม่รีบร้อน','ความสัมพันธ์มีโอกาสอบอุ่นขึ้นได้ เมื่อเริ่มจากการพูดคุยอย่างจริงใจ','ถ้ากำลังคุยกับใครอยู่ ให้ดูความสม่ำเสมอในการกระทำมากกว่าคำสัญญา'],
+   caution:['แต่หมอขอเตือนว่าอย่าเป็นฝ่ายอดทนอยู่คนเดียวจนลืมคุณค่าของตัวเอง','อย่าเพิ่งตีความความเงียบของอีกฝ่ายไปในทางร้ายโดยไม่มีข้อมูล','ระวังการกลับไปเจ็บเรื่องเดิม หากยังไม่ได้คุยถึงต้นเหตุให้ชัด'],
+   advice:['ลองพูดความต้องการของตัวเองอย่างอ่อนโยน แต่ตรงไปตรงมานะคะ','หมออยากให้เลือกความสัมพันธ์ที่เคารพกัน ไม่ใช่ความรักที่ต้องคอยเดาใจตลอดค่ะ','ให้เวลาเป็นเครื่องพิสูจน์ค่ะ ความรักที่ดีควรทำให้คุณเป็นตัวเองได้']},
+ {intro:['เรื่องครอบครัว หมอเปิ้ลรู้สึกว่ามีความห่วงใยกันอยู่มากนะคะ','มาดูคนในบ้านกันค่ะ บางครั้งรักกันมากก็ยังสื่อสารไม่ตรงกันได้','เรื่องครอบครัว หมออยากให้คุณมองทั้งความรู้สึกของตัวเองและคนใกล้ตัวค่ะ'],
+   positive:['ถ้ามีเรื่องไม่เข้าใจกัน ยังมีโอกาสค่อย ๆ คุยให้ดีขึ้นได้','การช่วยกันแบ่งหน้าที่เล็ก ๆ อาจทำให้บรรยากาศในบ้านเบาขึ้นมาก','คำถามง่าย ๆ ว่าเหนื่อยไหมหรือให้ช่วยอะไร อาจเป็นจุดเริ่มต้นที่ดี'],
+   caution:['แต่อย่ารับทุกปัญหาของคนในบ้านมาเป็นความผิดของตัวเองนะคะ','ระวังพูดเรื่องสำคัญในเวลาที่ทุกคนกำลังมีอารมณ์','อย่าคิดว่าคนใกล้ชิดจะเข้าใจทุกอย่างโดยที่เราไม่เคยบอก'],
+   advice:['หมออยากให้เลือกเวลาสงบ ๆ แล้วคุยกันทีละเรื่องค่ะ','ดูแลคนที่รักได้ แต่ต้องเหลือแรงไว้ดูแลใจตัวเองด้วยนะคะ','ถ้าความเห็นไม่ตรงกัน ลองเริ่มจากฟังให้จบก่อนหาทางออกร่วมกันค่ะ']},
+ {intro:['เรื่องสุขภาพ หมอเปิ้ลอยากให้คุณหันมาดูแลตัวเองมากขึ้นนะคะ','สำหรับสุขภาพ ไพ่ชวนให้สังเกตว่าช่วงนี้เราใช้แรงเกินไปหรือเปล่าค่ะ','หมออยากให้เรื่องการพักผ่อนเป็นสิ่งสำคัญ ไม่ใช่สิ่งที่ทำเมื่อมีเวลาเหลือนะคะ'],
+   positive:['ถ้าค่อย ๆ จัดเวลานอนและพักระหว่างวันได้ ใจอาจรู้สึกเบาขึ้น','การกลับมาดูแลกิจวัตรเล็ก ๆ อย่างสม่ำเสมอเป็นจุดเริ่มต้นที่ดี','ลองเลือกกิจกรรมที่ช่วยให้ผ่อนคลายและเหมาะกับกำลังของตัวเอง'],
+   caution:['แต่อย่าฝืนอาการผิดปกติหรือใช้คำทำนายแทนการตรวจรักษานะคะ','ถ้ามีอาการที่กังวลหรือเป็นต่อเนื่อง ควรปรึกษาบุคลากรทางการแพทย์','ระวังปล่อยให้ความเครียดสะสมโดยไม่มีเวลาพักหรือคนให้ปรึกษา'],
+   advice:['หมออยากให้เริ่มจากดูแลการกิน การนอน และการพักให้เป็นเวลาค่ะ','ถ้าไม่สบายใจเรื่องอาการใด ๆ ไปพบผู้เชี่ยวชาญเพื่อให้ได้ข้อมูลที่ถูกต้องนะคะ','ให้ตัวเองพักได้โดยไม่ต้องรู้สึกผิดค่ะ ร่างกายไม่จำเป็นต้องไหวตลอดเวลา']},
+ {intro:['สุดท้ายนี้ หมอเปิ้ลมีเรื่องอยากฝากคุณจากไพ่ทั้งสามค่ะ','ก่อนจบคำทำนาย หมออยากบอกอะไรคุณสักอย่างนะคะ','คำแนะนำที่หมออยากให้เก็บไว้วันนี้ ไม่ใช่ให้กลัวอนาคตค่ะ'],
+   positive:['สิ่งที่ผ่านมาทำให้คุณรู้จักตัวเองมากขึ้น แม้บางช่วงจะไม่ง่ายเลย','ยังมีเรื่องดี ๆ ที่สร้างขึ้นได้จากการตัดสินใจเล็ก ๆ ของคุณ','คุณไม่จำเป็นต้องเห็นทางทั้งเส้นในวันนี้ แค่เห็นก้าวต่อไปก็พอ'],
+   caution:['แต่อย่าให้ความกังวลพาไปตัดสินใจแทนเหตุผล','อย่าเปรียบเทียบจังหวะชีวิตของตัวเองกับคนอื่นจนหมดกำลังใจ','อย่ารอให้ทุกอย่างสมบูรณ์แบบแล้วค่อยเริ่ม เพราะบางเรื่องต้องเรียนรู้ระหว่างทาง'],
+   advice:['เลือกหนึ่งเรื่องที่ทำได้จริงภายในสัปดาห์นี้ แล้วค่อย ๆ ลงมือค่ะ','หมอขอให้คุณมีสติ ใช้ข้อมูลจริงประกอบ และใจดีกับตัวเองด้วยนะคะ','เรื่องไหนหนักเกินไป ลองขอคำปรึกษาจากคนที่ไว้ใจได้ ไม่ต้องแบกคนเดียวค่ะ']}
+];
+// V7: natural spoken readings, 72 authored scenario sets (12 x 6 areas).
+// Cards and order influence scenario selection; avoid repeating the same full six-area result within a browser session.
+const MORPLE_SCENARIOS = [[["ช่วงนี้งานที่รับผิดชอบอาจเยอะกว่าที่คนอื่นเห็นค่ะ เหมือนต้องคอยตามแก้รายละเอียดให้ทุกอย่างเดินต่อ","ข่าวดีคือสิ่งที่คุณทำไว้มีโอกาสได้รับการมองเห็น โดยเฉพาะถ้ากล้าบอกผลงานของตัวเองให้ชัด","หมอขอเตือนว่าอย่ารับงานเพิ่มเพียงเพราะเกรงใจนะคะ ลองคุยเรื่องขอบเขตหน้าที่ให้เรียบร้อยก่อน"],["ใครที่กำลังคิดเปลี่ยนงาน หมอเปิ้ลมองว่าใจคุณเริ่มอยากออกจากจุดเดิมแล้วค่ะ","มีโอกาสเจอทางเลือกใหม่จากคนรู้จักหรือการติดต่อที่ไม่ได้คาดไว้","แต่อย่าเพิ่งลาออกเพราะอารมณ์ชั่ววูบนะคะ ตรวจสอบรายได้ สัญญา และวันเริ่มงานให้แน่นอนก่อน"],["เรื่องงานที่รอคำตอบอยู่ยังไม่จำเป็นต้องตีความว่าเงียบแล้วจะไม่สำเร็จนะคะ","ไพ่ให้ภาพของความคืบหน้าแบบค่อยเป็นค่อยไป โดยเฉพาะเรื่องที่ต้องผ่านการพิจารณาจากหลายคน","หมออยากให้ติดตามอย่างสุภาพและเตรียมแผนสำรองไว้ด้วยค่ะ"],["หมอเปิ้ลเห็นภาพของคนที่มีฝีมือ แต่บางครั้งไม่ค่อยกล้าเสนอความคิดเห็นค่ะ","ช่วงต่อไปอาจมีจังหวะให้คุณแสดงความสามารถในเรื่องที่ถนัด","อย่าปล่อยให้ความกลัวผิดพลาดทำให้พลาดโอกาสนะคะ เตรียมข้อมูลให้พร้อมแล้วพูดออกไป"],["ถ้าทำธุรกิจส่วนตัว ช่วงนี้ต้องกลับมาดูว่าอะไรทำเงินจริง อะไรแค่ทำให้เหนื่อยค่ะ","มีแนวโน้มได้ลูกค้าจากงานเก่าหรือคำแนะนำปากต่อปาก","หมอขอให้คุมต้นทุนและตกลงขอบเขตงานเป็นลายลักษณ์อักษรทุกครั้งนะคะ"],["เรื่องคนในที่ทำงานอาจทำให้คุณเหนื่อยใจมากกว่าตัวงานเสียอีกค่ะ","แต่สถานการณ์มีโอกาสดีขึ้นถ้าเริ่มคุยกันตรงประเด็นและแบ่งหน้าที่ชัดเจน","อย่าเอาคำพูดที่ได้ยินต่อ ๆ กันมาตัดสินใครทันทีนะคะ"],["คุณอาจกำลังยืนอยู่ระหว่างงานที่มั่นคงกับสิ่งใหม่ที่อยากลองค่ะ","ไพ่ให้แนวโน้มว่าการเริ่มจากงานเล็ก ๆ ควบคู่ไปก่อนอาจเปิดทางได้","หมอไม่อยากให้ทุ่มหมดหน้าตักในวันที่ยังไม่เห็นรายได้จริงนะคะ"],["งานที่เคยติดขัดอาจเริ่มคลี่คลายเมื่อคุณกลับมาจัดลำดับความสำคัญค่ะ","มีจังหวะดีสำหรับสะสางเรื่องค้างและปิดงานให้สำเร็จทีละชิ้น","ระวังความรีบร้อนจนตกหล่นรายละเอียด โดยเฉพาะเอกสารและการส่งมอบนะคะ"],["ถ้ารู้สึกว่าไม่มีใครเห็นคุณค่าในงานที่ทำ หมออยากให้รู้ว่าความเหนื่อยนี้ไม่ใช่เรื่องเล็กค่ะ","ไพ่ชวนให้มองหาทีมหรือสภาพแวดล้อมที่เปิดโอกาสให้คุณเติบโต","แต่อย่าเพิ่งตัดสินตัวเองจากคำวิจารณ์ของคนเพียงคนเดียวนะคะ"],["งานช่วงนี้มีโอกาสเกี่ยวข้องกับการเรียนรู้สิ่งใหม่ หรือเปลี่ยนวิธีทำงานเดิมค่ะ","สิ่งที่ดูยากในตอนแรกอาจกลายเป็นทักษะที่ช่วยให้คุณก้าวหน้า","หมออยากให้ถามเมื่อไม่เข้าใจ ไม่จำเป็นต้องเก่งตั้งแต่วันแรกนะคะ"],["มีเรื่องที่ต้องตัดสินใจเกี่ยวกับงาน แต่ข้อมูลบางอย่างอาจยังมาไม่ครบค่ะ","ถ้าคุณให้เวลาตัวเองตรวจสอบอีกนิด จะเห็นข้อดีข้อเสียชัดขึ้น","อย่ารับปากเพราะกลัวเสียโอกาสจนต้องมาลำบากภายหลังนะคะ"],["หมอเปิ้ลมองว่าช่วงนี้คุณเหมาะกับการกลับมาสร้างผลงานให้เป็นรูปธรรมค่ะ","งานเล็กที่ทำอย่างต่อเนื่องอาจนำไปสู่โอกาสใหญ่กว่าที่คิด","ขอแค่อย่าจับทุกอย่างพร้อมกัน เลือกเรื่องที่มีโอกาสสำเร็จสูงก่อนนะคะ"]],[["เรื่องเงินช่วงนี้เหมือนมีเข้ามาแล้วก็มีเรื่องให้จ่ายออกไปเรื่อย ๆ นะคะ","แต่หมอมองว่ายังพอจัดระเบียบได้ ถ้ากลับมาแยกรายจ่ายจำเป็นกับรายจ่ายที่เลื่อนได้","ระวังการใช้เงินแก้ความเครียดโดยไม่รู้ตัวค่ะ"],["ใครกำลังรอเงินจากงานหรือคนที่ค้างจ่ายอยู่ หมอเข้าใจเลยว่ากังวลค่ะ","ไพ่ให้ภาพของการติดตามเรื่องอย่างมีขั้นตอน มากกว่าการรอเฉย ๆ","เก็บหลักฐานและกำหนดวันชำระให้ชัดเจนนะคะ อย่าอาศัยแค่คำพูด"],["การเงินมีแนวโน้มได้ช่องทางเสริมจากความสามารถที่มีอยู่แล้วค่ะ","งานเล็ก ๆ ที่รับเพิ่มอาจช่วยให้หายใจคล่องขึ้นได้","แต่อย่าลงทุนซื้ออุปกรณ์หรือจ่ายค่าสมัครแพง ๆ ก่อนตรวจสอบว่าจะมีลูกค้าจริงนะคะ"],["ช่วงนี้หมออยากให้ระวังข้อเสนอที่บอกว่าได้เงินเร็วเป็นพิเศษค่ะ","โอกาสดีมีได้ แต่ของจริงควรตรวจสอบที่มาและเงื่อนไขได้","ถ้าใครเร่งให้โอนเงินทันที ขอให้หยุดคิดก่อนนะคะ"],["เรื่องหนี้หรือภาระผ่อนอาจเป็นสิ่งที่คุณแบกอยู่ในใจค่ะ","การเริ่มคุยปรับเงื่อนไขหรือจัดลำดับยอดที่จำเป็นอาจช่วยให้เห็นทางออก","อย่ากู้เพิ่มเพียงเพื่อปิดปัญหาระยะสั้นโดยไม่คำนวณต้นทุนทั้งหมดนะคะ"],["หมอเปิ้ลเห็นว่าคุณกำลังอยากสร้างความมั่นคงให้มากกว่าเดิมค่ะ","ไพ่ชวนให้เริ่มจากเงินสำรองก้อนเล็กที่เก็บได้จริง","อย่าเปรียบเทียบฐานะกับคนอื่นจนเผลอใช้เงินเกินกำลังค่ะ"],["หากมีแผนซื้อของชิ้นใหญ่ ช่วงนี้ควรชั่งใจให้ดีนะคะ","คุณอาจพบทางเลือกที่คุ้มค่ากว่าเมื่อให้เวลาหาข้อมูลเพิ่ม","หมออยากให้ดูค่าใช้จ่ายหลังซื้อด้วย ไม่ใช่ดูแค่ราคาวันแรกค่ะ"],["เงินจากการค้าขายอาจขึ้นลงไม่เท่ากันในแต่ละช่วงค่ะ","มีโอกาสปรับวิธีเสนอสินค้าแล้วได้ผลดีขึ้น","แต่ต้องแยกเงินส่วนตัวกับเงินหมุนของร้านให้ชัดนะคะ"],["ช่วงนี้อาจมีคนมาขอความช่วยเหลือเรื่องเงินค่ะ","หมอรู้ว่าคุณใจดี แต่การช่วยเหลือควรอยู่ในขอบเขตที่เราไม่เดือดร้อน","ถ้าจำเป็นต้องให้ยืม คุยจำนวนและกำหนดคืนให้ชัดเจนค่ะ"],["เรื่องการเงินไม่ได้มีแค่หาให้มากขึ้น แต่ต้องรู้ด้วยว่าเงินรั่วตรงไหนค่ะ","ถ้าลองย้อนดูค่าใช้จ่ายหนึ่งเดือน คุณอาจเจอจุดที่ลดได้โดยไม่ลำบาก","หมออยากให้เริ่มจากรายการเล็ก ๆ ก่อนนะคะ"],["มีแนวโน้มว่าความรู้หรือประสบการณ์เดิมจะต่อยอดเป็นรายได้ได้ค่ะ","ลองมองงานที่เคยทำสำเร็จว่ามีใครยินดีจ่ายให้ทำอีกไหม","อย่ารีบลดราคาจนไม่เหลือกำไรเพียงเพราะกลัวลูกค้าไม่เลือกค่ะ"],["ถ้ากำลังลังเลเรื่องลงทุน หมออยากให้มองความเสี่ยงก่อนผลตอบแทนนะคะ","การรอให้ข้อมูลครบอาจเป็นการตัดสินใจที่ดีมากในช่วงนี้","อย่าใช้เงินที่ต้องจ่ายค่าใช้จ่ายจำเป็นไปเสี่ยงเด็ดขาดค่ะ"]],[["เรื่องหัวใจช่วงนี้อาจมีคำพูดบางคำที่อยากถาม แต่ยังไม่ได้ถามนะคะ","ถ้ามีคู่ การคุยกันในเวลาที่ใจเย็นอาจทำให้เข้าใจกันมากขึ้น","ส่วนคนโสด หมออยากให้ดูความสม่ำเสมอมากกว่าคำหวานค่ะ"],["หมอเปิ้ลมองว่าความรักที่ดีไม่ควรทำให้เราต้องเดาใจตลอดเวลานะคะ","ถ้ากำลังคุยกับใคร มีโอกาสเห็นความชัดเจนจากการกระทำของเขามากขึ้น","แต่อย่าลดคุณค่าตัวเองเพื่อรักษาคนที่ไม่เคารพความรู้สึกเราค่ะ"],["สำหรับคนมีคู่ ช่วงนี้อาจเหนื่อยเพราะต่างคนต่างมีภาระค่ะ","หาเวลาทำเรื่องเล็ก ๆ ด้วยกันจะช่วยให้กลับมาใกล้กัน","ส่วนคนโสดไม่ต้องรีบมีใครเพียงเพราะเห็นคนอื่นมีคู่แล้วนะคะ"],["มีความทรงจำเก่าหรือคนเก่าที่อาจกลับมาอยู่ในความคิดค่ะ","ไพ่ชวนให้มองว่าเราเรียนรู้อะไรจากความสัมพันธ์ครั้งนั้น","ถ้าเขากลับมา อย่าเพิ่งตัดสินจากความคิดถึงอย่างเดียว ดูว่าอะไรเปลี่ยนไปจริงบ้างค่ะ"],["ความรักรอบนี้หมอเห็นเรื่องความไว้วางใจเป็นหลักค่ะ","คนมีคู่ลองเปิดใจคุยเรื่องที่กังวลโดยไม่เริ่มจากการกล่าวโทษ","คนโสดให้เวลารู้จักกันก่อน อย่ารีบฝากอนาคตไว้กับคำสัญญานะคะ"],["บางทีคุณอาจเป็นฝ่ายพยายามประคองความสัมพันธ์อยู่มากค่ะ","ถ้าลองพูดความต้องการของตัวเองตรง ๆ อาจได้เห็นท่าทีที่ชัดขึ้น","หมออยากให้จำไว้ว่าความรักต้องช่วยกันสองฝ่ายค่ะ"],["คนโสดมีโอกาสรู้จักคนผ่านงานหรือวงเพื่อนค่ะ","ส่วนคนมีคู่ก็อาจได้กลับมาทำอะไรใหม่ ๆ ด้วยกัน","แต่หมออยากให้ค่อย ๆ ดูนิสัย อย่าตัดสินกันจากความประทับใจครั้งแรกนะคะ"],["ความรักช่วงนี้ไม่ได้ต้องการคำตอบใหญ่โตเท่ากับความใส่ใจในแต่ละวันค่ะ","การถามสารทุกข์สุกดิบหรือฟังกันให้จบอาจทำให้ความสัมพันธ์อุ่นขึ้น","อย่าปล่อยให้ความเคยชินกลายเป็นการละเลยกันนะคะ"],["ถ้าช่วงนี้รู้สึกห่างกับใครบางคน หมออยากให้ลองถามก่อนจะคิดแทนเขาค่ะ","อาจมีเรื่องอื่นที่อีกฝ่ายกำลังแบกอยู่โดยไม่รู้จะพูดยังไง","แต่ถ้าคุยแล้วอีกฝ่ายยังไม่เคารพขอบเขต ก็ต้องกลับมาดูแลใจตัวเองด้วยค่ะ"],["ไพ่ชุดนี้ชวนให้คุณกลับมารักตัวเองก่อนค่ะ","เมื่อเรารู้ว่าตัวเองต้องการอะไร การเลือกความสัมพันธ์ก็จะชัดขึ้น","ไม่ต้องรีบพิสูจน์ตัวเองให้ใครเห็นจนเหนื่อยเกินไปนะคะ"],["สำหรับคนที่กำลังตัดสินใจเรื่องความสัมพันธ์ หมออยากให้ดูทั้งหัวใจและความจริงค่ะ","ความชัดเจนอาจเกิดจากการคุยเรื่องอนาคตและความคาดหวังตรง ๆ","อย่าหวังว่าเวลาจะเปลี่ยนทุกอย่างได้โดยไม่มีใครลงมือค่ะ"],["หมอเปิ้ลเห็นความหมายของการเริ่มต้นใหม่ในเรื่องหัวใจค่ะ","อาจเป็นการเปิดใจให้คนใหม่ หรือเริ่มคุยกันใหม่กับคนเดิมด้วยวิธีที่ดีกว่า","ขอแค่อย่าเอาบาดแผลเก่ามาตัดสินทุกคนที่เข้ามานะคะ"]],[["เรื่องคนในบ้าน หมออยากให้ลองถามกันว่าใครกำลังเหนื่อยอยู่บ้างนะคะ","บางครั้งคำถามง่าย ๆ ก็ทำให้คนที่เก็บเรื่องไว้รู้สึกได้รับการดูแล","แต่อย่ารับหน้าที่แก้ปัญหาทุกคนไว้คนเดียวค่ะ"],["ครอบครัวอาจมีความเห็นไม่ตรงกันเรื่องเล็ก ๆ ที่สะสมมานานค่ะ","ถ้าเลือกคุยในเวลาสงบ มีโอกาสเข้าใจกันมากขึ้น","หมอขอให้ฟังจนจบก่อนตอบโต้นะคะ"],["ช่วงนี้อาจต้องจัดเวลาให้คนในบ้านมากขึ้นหน่อยค่ะ","การกินข้าวหรือทำกิจกรรมร่วมกันสักครั้งช่วยเติมความใกล้ชิดได้","แต่ต้องแบ่งเวลาให้ตัวเองพักด้วยนะคะ"],["ถ้ามีผู้ใหญ่ในบ้านที่คุณเป็นห่วง ลองติดต่อไปถามไถ่ค่ะ","บางทีเขาอาจไม่ได้ต้องการอะไรนอกจากคนรับฟัง","อย่าเพิ่งตีความความเงียบว่าเขาสบายดีหรือไม่สบายดีโดยไม่ถามนะคะ"],["เรื่องเงินในครอบครัวควรคุยกันให้ชัดเป็นพิเศษค่ะ","การแบ่งหน้าที่และค่าใช้จ่ายตามกำลังของแต่ละคนช่วยลดความอึดอัดได้","อย่าปล่อยให้ใครคนหนึ่งแบกทุกอย่างเพราะไม่กล้าพูดค่ะ"],["หมอเปิ้ลมองว่าบ้านควรเป็นที่ที่เราได้พักใจนะคะ","ถ้าช่วงนี้บรรยากาศตึง ลองเริ่มจากคำพูดดี ๆ และการช่วยกันเรื่องเล็กน้อย","ไม่จำเป็นต้องแก้ทุกปัญหาในวันเดียวค่ะ"],["อาจมีเรื่องให้ช่วยตัดสินใจแทนคนในครอบครัวค่ะ","หมออยากให้ถามความต้องการของเจ้าตัวก่อน แล้วค่อยเสนอทางเลือก","ความหวังดีจะยิ่งดีเมื่อเราเคารพการตัดสินใจของกันและกันนะคะ"],["ถ้าห่างจากบ้านมานาน ช่วงนี้เหมาะกับการกลับไปเชื่อมความสัมพันธ์ค่ะ","แค่โทรศัพท์หรือส่งข้อความก็อาจทำให้ใครบางคนยิ้มได้","อย่ารอให้มีเรื่องสำคัญแล้วค่อยติดต่อกันนะคะ"],["บางคนในบ้านอาจกำลังต้องการกำลังใจมากกว่าคำแนะนำค่ะ","ลองฟังเขาโดยไม่รีบสรุปว่าอะไรถูกผิด","หมออยากให้ระวังคำพูดตอนเหนื่อย เพราะคำสั้น ๆ ก็ทำร้ายใจกันได้ค่ะ"],["ครอบครัวมีโอกาสเริ่มต้นจัดระเบียบเรื่องค้างคาใหม่ค่ะ","ถ้าช่วยกันวางแผนทีละเรื่อง ภาระที่เคยหนักอาจเบาลง","อย่าคาดหวังให้ทุกคนคิดเหมือนกันทั้งหมดนะคะ"],["หมอเปิ้ลอยากให้คุณเห็นคุณค่าของตัวเองในบ้านด้วยค่ะ","คุณดูแลคนอื่นได้โดยไม่ต้องยอมเสียสละทุกอย่าง","ถ้าเหนื่อยก็พูดออกมาตรง ๆ ได้ ไม่ใช่ความผิดนะคะ"],["ความสัมพันธ์ในบ้านอาจดีขึ้นจากการให้อภัยเรื่องเล็ก ๆ ค่ะ","ถ้าต่างฝ่ายพร้อมคุย การเริ่มใหม่ก็เป็นไปได้","แต่เรื่องที่กระทบความปลอดภัยหรือความไว้วางใจต้องมีขอบเขตที่ชัดเจนค่ะ"]],[["หมออยากให้กลับมาดูเรื่องการนอนก่อนเลยค่ะ","ถ้าช่วงนี้พักผ่อนน้อย ลองจัดเวลาปิดหน้าจอและเข้านอนให้สม่ำเสมอ","ถ้ามีอาการผิดปกติหรือเป็นต่อเนื่อง ควรปรึกษาแพทย์นะคะ"],["สุขภาพช่วงนี้หมอชวนให้สังเกตความเหนื่อยสะสมค่ะ","บางครั้งการหยุดพักสั้น ๆ ระหว่างวันช่วยให้มีแรงทำเรื่องสำคัญต่อ","อย่าฝืนร่างกายเพียงเพราะกลัวงานไม่เสร็จค่ะ"],["เรื่องอาหารและน้ำดื่มเป็นเรื่องเล็กที่อยากให้ใส่ใจค่ะ","ลองกลับมาจัดมื้ออาหารให้เป็นเวลาและดื่มน้ำให้เพียงพอ","ไพ่ไม่ได้บอกโรคนะคะ ถ้ามีอาการกังวลควรให้ผู้เชี่ยวชาญตรวจค่ะ"],["ช่วงนี้อารมณ์อาจขึ้นลงตามความเหนื่อยได้ค่ะ","การได้เดินเล่นหรือเปลี่ยนบรรยากาศบ้างอาจช่วยให้ใจเบาขึ้น","ถ้าความเครียดรบกวนชีวิตประจำวัน อย่าลังเลที่จะขอความช่วยเหลือนะคะ"],["หมอเปิ้ลอยากให้คุณเลิกคิดว่าการพักคือความขี้เกียจค่ะ","ถ้าแบ่งเวลาพักได้จริง ร่างกายและใจก็มีโอกาสฟื้นตัวดีขึ้น","อย่าใช้คำทำนายแทนการตรวจสุขภาพหรือคำแนะนำจากแพทย์ค่ะ"],["สำหรับคนที่นั่งทำงานนาน ๆ ลองสังเกตว่าได้ขยับตัวบ้างหรือเปล่าค่ะ","การลุกเดิน ยืดเหยียดอย่างเหมาะสม และพักสายตาเป็นระยะเป็นจุดเริ่มต้นที่ดี","ถ้ามีอาการเจ็บหรือชา อย่าฝืนและควรขอคำแนะนำจากแพทย์นะคะ"],["หมออยากให้คุณกลับมาฟังสัญญาณจากร่างกายตัวเองค่ะ","การทำกิจวัตรให้สม่ำเสมออาจช่วยให้รู้สึกมีสมดุลมากขึ้น","แต่ถ้ามีอาการใหม่หรือรุนแรง ต้องพบแพทย์ ไม่ควรรอคำทำนายค่ะ"],["บางทีเราเป็นห่วงทุกคนจนลืมถามตัวเองว่าไหวไหมนะคะ","ลองแบ่งเวลาสำหรับสิ่งที่ทำให้สบายใจโดยไม่รู้สึกผิด","อย่าปล่อยให้ความเหนื่อยสะสมเป็นเรื่องปกติไปค่ะ"],["เรื่องสุขภาพช่วงนี้เหมาะกับการเริ่มนิสัยเล็ก ๆ ที่ทำต่อเนื่องได้ค่ะ","ไม่จำเป็นต้องเปลี่ยนทุกอย่างในวันเดียว แค่เดินหรือพักให้เป็นเวลาก็เริ่มได้","เลือกกิจกรรมให้เหมาะกับสุขภาพของตัวเองนะคะ"],["ถ้าช่วงนี้มีเรื่องคิดมากก่อนนอน หมออยากให้ลองเขียนสิ่งที่กังวลออกมาค่ะ","การแยกเรื่องที่ทำได้วันนี้กับเรื่องที่ต้องรออาจช่วยให้ใจสงบขึ้น","ถ้านอนไม่หลับเรื้อรังควรปรึกษาบุคลากรทางการแพทย์ค่ะ"],["หมอเปิ้ลอยากให้คุณดูแลทั้งร่างกายและใจไปพร้อมกันค่ะ","การได้คุยกับคนที่ไว้ใจและมีเวลาส่วนตัวอาจช่วยลดความตึงเครียด","อย่าตัดสินภาวะสุขภาพจากหน้าไพ่นะคะ"],["ช่วงนี้อาจเป็นจังหวะดีที่จะกลับมาตรวจทบทวนกิจวัตรของตัวเองค่ะ","เลือกปรับสิ่งหนึ่งที่ทำได้จริงก่อน เช่น เวลานอนหรือเวลาพัก","ถ้ามีข้อกังวลด้านสุขภาพ ให้แพทย์ช่วยประเมินอย่างเหมาะสมค่ะ"]],[["หมอเปิ้ลอยากบอกว่า คุณไม่จำเป็นต้องแก้ทุกเรื่องให้สำเร็จภายในวันเดียวค่ะ","สิ่งที่ผ่านมาทำให้คุณมีบทเรียนมากพอจะเลือกทางที่เหมาะกับตัวเอง","ลองเริ่มจากเรื่องสำคัญที่สุดหนึ่งเรื่องก่อนนะคะ"],["อย่าเพิ่งหมดกำลังใจเพราะผลลัพธ์ยังไม่มาตามเวลาที่หวังค่ะ","บางโอกาสต้องอาศัยการเตรียมตัวและจังหวะที่เหมาะสม","หมออยากให้คุณรักษาความหวังไว้ แต่ก็ลงมือบนข้อมูลจริงด้วยนะคะ"],["ไพ่สามใบนี้ชวนให้คุณมองว่าชีวิตยังมีทางเลือกค่ะ","อะไรที่เคยผิดพลาดไม่ได้แปลว่าจะต้องผิดพลาดซ้ำเสมอไป","แค่เลือกวิธีใหม่และไม่รีบกดดันตัวเองค่ะ"],["ถ้าในใจยังมีเรื่องค้างคา หมออยากให้ค่อย ๆ คลี่ออกทีละปมนะคะ","คุณไม่จำเป็นต้องแบกความรู้สึกทั้งหมดไว้คนเดียว","ลองปรึกษาคนที่ไว้ใจได้เมื่อรู้สึกหนักเกินไปค่ะ"],["หมอเปิ้ลขอให้คุณเชื่อในคุณค่าของตัวเองนะคะ","ไม่ว่าจะอยู่ในช่วงรอหรือช่วงเริ่มใหม่ ก็ยังมีสิ่งที่ทำได้วันนี้","เลือกก้าวเล็ก ๆ ที่ทำจริง แล้วค่อยดูผลของมันค่ะ"],["อย่ากลัวที่จะเริ่มใหม่เพียงเพราะเคยเหนื่อยมาก่อนค่ะ","บทเรียนเก่าอาจช่วยให้คุณตัดสินใจได้รอบคอบกว่าเดิม","แต่หมออยากให้วางแผน ไม่ใช่เดินตามความหวังอย่างเดียวค่ะ"],["หมออยากให้คุณแยกเรื่องที่ควบคุมได้กับเรื่องที่ต้องปล่อยให้เป็นไปนะคะ","พลังของเรามีจำกัด เอาไปใช้กับสิ่งที่เปลี่ยนได้จะคุ้มกว่า","ส่วนเรื่องที่ยังไม่มีคำตอบ ให้เวลากับมันหน่อยค่ะ"],["บางครั้งคำตอบไม่ได้อยู่ที่การพยายามให้มากกว่าเดิม แต่อยู่ที่การเลือกให้ถูกค่ะ","ลองกลับมาถามตัวเองว่าอะไรสำคัญจริง ๆ ในช่วงนี้","อย่าให้เสียงของคนอื่นดังจนไม่ได้ยินเสียงตัวเองนะคะ"],["หมอเปิ้ลอยากให้คุณเปิดใจรับความช่วยเหลือบ้างค่ะ","คนเก่งไม่จำเป็นต้องทำทุกอย่างคนเดียว","ถ้ามีใครยื่นมือมา ลองดูว่าเขาช่วยอะไรได้โดยไม่ต้องเสียขอบเขตของเราค่ะ"],["ไพ่ชุดนี้ชวนให้ทบทวนว่าอะไรควรเก็บไว้ และอะไรถึงเวลาวางลงค่ะ","เมื่อมีพื้นที่ในใจมากขึ้น เราอาจมองเห็นโอกาสที่เคยมองข้าม","หมอขอให้เลือกสิ่งที่ดีต่อชีวิตระยะยาวนะคะ"],["ก่อนจบ หมออยากให้คุณภูมิใจกับตัวเองสักเรื่องหนึ่งค่ะ","ถึงวันนี้ยังไม่สมบูรณ์แบบ แต่คุณก็ผ่านอะไรมาไม่น้อย","ให้กำลังใจตัวเอง แล้วค่อยก้าวต่อไปอย่างมีสตินะคะ"],["หมอเปิ้ลขอฝากว่าอนาคตไม่ได้ถูกตัดสินด้วยไพ่เพียงสามใบค่ะ","คำทำนายเป็นแนวทางให้เห็นมุมที่อาจยังไม่ได้คิด","การตัดสินใจและการลงมือทำของคุณต่างหากที่สำคัญที่สุดค่ะ"]]];
+// V8: 3-card narrative, six different life areas, no repeated scenario until all 12 used per area.
+// Card groups represent motifs rather than fabricated certainty about the reader.
+const CARD_GROUPS=[
+ 'growth','intuition','boundaries','healing','change','healing','foundation','opportunity','connection','change',
+ 'boundaries','intuition','opportunity','foundation','clarity','connection','clarity','growth','connection','healing',
+ 'opportunity','clarity','opportunity','clarity','healing','connection','healing','growth','foundation','boundaries',
+ 'intuition','growth','opportunity','change','clarity','change','change','foundation','connection','connection',
+ 'opportunity','growth','change','foundation','connection','healing','clarity','clarity','foundation','change'
+];
+// Each motif has domain-specific spoken Thai. 6 areas × 8 motifs = 48 distinct card interpretations.
+const CARD_VOICES={
+ growth:[
+ 'เรื่องงาน ไพ่ชวนให้นึกถึงสิ่งที่คุณลงมือทำต่อเนื่องมาสักพักค่ะ บางทีความคืบหน้าอาจยังไม่หวือหวา แต่ประสบการณ์ที่สะสมไว้กำลังกลายเป็นจุดแข็งของคุณ',
+ 'เรื่องเงิน ไพ่พูดถึงการค่อย ๆ สร้างฐานะมากกว่ารวยจากทางลัดนะคะ รายได้ที่มั่นคงอาจเริ่มจากงานเล็ก ๆ ที่ทำได้ดีและทำได้สม่ำเสมอ',
+ 'เรื่องหัวใจ ไพ่ใบนี้ชวนให้มองความสัมพันธ์ที่ค่อย ๆ เติบโตค่ะ บางคนไม่ได้เข้ามาอย่างหวือหวา แต่ความใส่ใจที่มีให้กันทุกวันสำคัญกว่า',
+ 'เรื่องครอบครัว หมอเห็นภาพของการประคองกันในระยะยาวค่ะ ความสัมพันธ์ในบ้านไม่ได้ดีขึ้นในวันเดียว แต่การใส่ใจเรื่องเล็ก ๆ ทำให้คนรู้สึกว่าไม่ได้อยู่ลำพัง',
+ 'ด้านสุขภาพ ไพ่ชวนให้กลับมาสร้างกิจวัตรที่ดูแลตัวเองได้จริงค่ะ ไม่ต้องเปลี่ยนทุกอย่างทันที เริ่มจากสิ่งเล็ก ๆ ที่ทำต่อเนื่องได้ก่อน',
+ 'หมออยากฝากเรื่องความอดทนค่ะ บางเรื่องไม่ได้ช้าเพราะเราไม่เก่ง แต่อาจต้องใช้เวลาให้รากฐานแข็งแรงก่อน'
+ ],
+ intuition:[
+ 'เรื่องงานมีบางอย่างที่คุณอาจยังไม่มั่นใจค่ะ บางทีความรู้สึกบอกว่ามีจุดที่ต้องตรวจสอบเพิ่ม หมออยากให้ฟังสัญญาณนั้นแล้วหาข้อมูลจริงมาประกอบ',
+ 'เรื่องเงิน หมออยากให้ระวังข้อเสนอที่ฟังดูดีแต่ยังไม่เห็นรายละเอียดค่ะ ถ้าใครเร่งให้ตัดสินใจเร็ว ๆ ยิ่งควรขอเวลาคิด',
+ 'เรื่องความรัก ไพ่สะท้อนความรู้สึกที่ยังไม่ได้พูดออกมาค่ะ อาจมีคำถามบางอย่างอยู่ในใจ แต่หมอไม่อยากให้ใช้การเดาแทนการพูดคุยกัน',
+ 'เรื่องคนในบ้าน บางครั้งเราเห็นว่าใครเงียบแล้วคิดว่าเขาสบายดีนะคะ ลองถามกันด้วยความห่วงใยโดยไม่กดดันให้เขาต้องเล่าทุกอย่าง',
+ 'เรื่องสุขภาพ ไพ่ชวนให้สังเกตความรู้สึกและพลังของตัวเองค่ะ แต่ถ้ามีอาการผิดปกติจริง ๆ อย่าใช้การคาดเดาแทนการตรวจจากแพทย์นะคะ',
+ 'หมออยากให้เชื่อความรู้สึกของตัวเองในฐานะสัญญาณหนึ่งค่ะ แต่เรื่องสำคัญต้องใช้ทั้งใจและข้อมูล ไม่ใช่อย่างใดอย่างหนึ่ง'
+ ],
+ boundaries:[
+ 'เรื่องงาน หมออยากให้ดูว่าคุณกำลังรับผิดชอบมากกว่าที่ตกลงไว้หรือเปล่าค่ะ การช่วยคนอื่นเป็นเรื่องดี แต่หน้าที่ของเราต้องมีขอบเขตด้วย',
+ 'เรื่องเงิน ไพ่เตือนเรื่องการเกรงใจค่ะ โดยเฉพาะการให้ยืมเงินหรือช่วยรับภาระของคนอื่น อย่าตอบตกลงทั้งที่ตัวเองยังไม่พร้อม',
+ 'ความรักครั้งนี้ หมออยากให้ถามตัวเองว่าคุณได้เป็นตัวเองเต็มที่ไหมค่ะ ความสัมพันธ์ที่ดีควรมีพื้นที่ให้ทั้งสองฝ่าย ไม่ใช่ต้องยอมอยู่คนเดียว',
+ 'เรื่องครอบครัว ไพ่สะท้อนคนที่อยากดูแลทุกคนค่ะ แต่หมออยากให้แยกให้ออกว่าเรื่องไหนช่วยได้ และเรื่องไหนต้องให้เจ้าตัวรับผิดชอบเอง',
+ 'เรื่องสุขภาพ ไพ่เตือนเรื่องฝืนตัวเองเพราะไม่อยากปฏิเสธคนอื่นค่ะ ถ้าเหนื่อยก็ควรได้พัก ไม่ต้องรอจนหมดแรง',
+ 'สิ่งที่หมออยากฝากคือการรู้จักพูดว่าไม่ค่ะ ไม่ได้แปลว่าใจร้าย แต่แปลว่าเราให้ความสำคัญกับตัวเองด้วย'
+ ],
+ healing:[
+ 'เรื่องงานเหมือนมีความเหนื่อยบางอย่างสะสมมาค่ะ ถ้าผิดหวังกับงานหรือคนร่วมงานมา หมออยากให้พักใจสักนิดก่อนตัดสินใจเรื่องใหญ่',
+ 'เรื่องเงิน ไพ่ชวนให้กลับมาตั้งหลักหลังช่วงที่อาจใช้จ่ายหนักค่ะ ไม่ต้องรีบเอาทุกอย่างกลับคืนในครั้งเดียว ค่อย ๆ แก้จากรายการที่สำคัญที่สุดก่อน',
+ 'เรื่องความรัก ไพ่มีภาพของหัวใจที่ต้องการเวลาค่ะ ถ้าเคยผิดหวัง ไม่จำเป็นต้องรีบเปิดใจเพื่อพิสูจน์ว่าเราหายดีแล้ว',
+ 'เรื่องคนในบ้าน ถ้าเคยมีคำพูดที่ทำให้เสียใจกัน หมออยากให้เริ่มจากรับฟังค่ะ การคืนดีกันไม่จำเป็นต้องทำเหมือนไม่เคยมีอะไรเกิดขึ้น',
+ 'สุขภาพช่วงนี้ ไพ่ชวนให้ใส่ใจการพักและความเครียดค่ะ ถ้าเหนื่อยต่อเนื่องหรือมีอาการรบกวนชีวิต ควรปรึกษาแพทย์หรือผู้เชี่ยวชาญ',
+ 'หมออยากให้คุณใจดีกับตัวเองสักหน่อยค่ะ การพักไม่ใช่การถอยหลัง บางครั้งเป็นการเตรียมแรงสำหรับเดินต่อ'
+ ],
+ change:[
+ 'เรื่องงาน ไพ่ชุดนี้มีภาพของการเปลี่ยนจังหวะค่ะ อาจเป็นการปรับวิธีทำงาน เปลี่ยนบทบาท หรือเริ่มมองทางเลือกใหม่ แต่ยังต้องดูความพร้อมจริงด้วยนะคะ',
+ 'เรื่องเงิน ไพ่ชวนให้ทบทวนวิธีหารายได้หรือวิธีใช้เงินเดิม ๆ ค่ะ ถ้าแบบเก่าไม่ตอบโจทย์ อาจถึงเวลาลองปรับแผนโดยไม่เสี่ยงเกินตัว',
+ 'ความรัก ไพ่สะท้อนการเปลี่ยนแปลงของความรู้สึกหรือความคาดหวังค่ะ บางคู่ต้องเรียนรู้กันใหม่ ส่วนคนโสดอาจต้องปล่อยภาพความรักแบบเดิมก่อน',
+ 'เรื่องครอบครัว บางบ้านกำลังเจอช่วงเปลี่ยนผ่านค่ะ เมื่อหน้าที่หรือความต้องการของแต่ละคนเปลี่ยน วิธีพูดคุยกันก็อาจต้องเปลี่ยนตาม',
+ 'เรื่องสุขภาพ ไพ่ชวนให้เปลี่ยนพฤติกรรมเล็ก ๆ ที่ทำให้เหนื่อยสะสมค่ะ เริ่มจากสิ่งที่ทำได้จริง ไม่ต้องหักโหมเพื่อเห็นผลเร็ว',
+ 'หมออยากบอกว่าเริ่มใหม่ได้เสมอค่ะ แต่การเริ่มใหม่ที่ดีควรพกบทเรียนเก่าไปด้วย ไม่ใช่ลืมทุกอย่างแล้วเสี่ยงเหมือนเดิม'
+ ],
+ foundation:[
+ 'เรื่องงาน ไพ่เน้นความมั่นคงและรายละเอียดค่ะ ถ้ามีข้อเสนองานใหม่ ลองดูทั้งค่าตอบแทน หน้าที่ และโอกาสเติบโต ไม่ใช่ดูแค่ความตื่นเต้นตอนแรก',
+ 'เรื่องเงิน หมอเห็นภาพของการจัดระบบค่ะ การแยกเงินใช้ เงินเก็บ และภาระที่ต้องจ่ายให้ชัด อาจช่วยให้มองทางออกได้มากขึ้น',
+ 'ความรัก ไพ่ชวนให้ดูความไว้ใจค่ะ คำพูดหวานอาจทำให้ใจฟู แต่การรักษาสัญญาและอยู่ข้างกันในวันที่ไม่ง่ายต่างหากที่สร้างความมั่นคง',
+ 'เรื่องครอบครัว ไพ่พูดถึงฐานของบ้านค่ะ ถ้ามีแผนใช้เงินร่วมกันหรือแบ่งหน้าที่ คุยให้ชัดตั้งแต่ต้นจะช่วยลดความไม่เข้าใจกัน',
+ 'สุขภาพ ไพ่ชวนให้กลับไปดูพื้นฐานค่ะ เวลานอน อาหาร การเคลื่อนไหว และการตรวจสุขภาพตามความเหมาะสม สำคัญกว่าวิธีลัด',
+ 'หมออยากให้คุณกลับมาดูสิ่งที่เป็นหลักของชีวิตค่ะ เมื่อฐานแน่นขึ้น เรื่องอื่นจะค่อย ๆ จัดการได้ง่ายขึ้น'
+ ],
+ opportunity:[
+ 'เรื่องงาน ไพ่มีภาพของโอกาสที่อาจเข้ามาแบบไม่คาดคิดค่ะ แต่หมออยากให้เตรียมผลงานและความพร้อมไว้ก่อน เพราะโอกาสดีต้องมีคนพร้อมรับด้วย',
+ 'เรื่องเงิน ไพ่ชวนให้มองช่องทางรายได้ที่อยู่ใกล้ตัวค่ะ อาจเป็นทักษะ งานเสริม หรือคนรู้จักชวนทำงาน แต่ต้องดูต้นทุนและเงื่อนไขก่อน',
+ 'ความรัก ไพ่ให้ภาพของการเปิดพื้นที่ให้คนใหม่หรือวิธีคุยแบบใหม่ค่ะ ถ้าโสดก็ไม่ต้องปิดโอกาส ส่วนคนมีคู่ลองหาเวลาทำอะไรด้วยกันอีกครั้ง',
+ 'เรื่องครอบครัว ไพ่ชวนให้เริ่มบทสนทนาที่ดีค่ะ บางครั้งโอกาสปรับความเข้าใจก็เริ่มจากการถามไถ่ธรรมดา ๆ',
+ 'สุขภาพ ไพ่ชวนให้ใช้จังหวะนี้เริ่มดูแลตัวเองค่ะ ไม่ต้องรอให้มีเวลาว่างมาก แค่จัดเวลาเดินหรือพักให้เป็นประจำก็เริ่มได้',
+ 'หมออยากให้เปิดใจรับสิ่งใหม่ค่ะ แต่ไม่จำเป็นต้องคว้าทุกอย่างที่ผ่านเข้ามา เลือกสิ่งที่เหมาะกับชีวิตเราจริง ๆ'
+ ],
+ connection:[
+ 'เรื่องงาน ไพ่พูดถึงคนและการร่วมมือค่ะ งานบางอย่างอาจเดินง่ายขึ้นถ้าเราคุยให้ตรงกันหรือขอคำแนะนำจากคนที่มีประสบการณ์',
+ 'เรื่องเงิน ไพ่ชวนให้ดูข้อตกลงกับคนอื่นค่ะ โดยเฉพาะการทำธุรกิจร่วมกัน ควรแยกความสนิทออกจากเรื่องบัญชีและเอกสาร',
+ 'ความรัก ไพ่ใบนี้เด่นเรื่องการสื่อสารค่ะ คนมีคู่ควรฟังกันให้จบก่อน ส่วนคนโสดให้ดูว่าอีกฝ่ายสม่ำเสมอและเคารพขอบเขตเราหรือเปล่า',
+ 'เรื่องครอบครัว หมอเห็นภาพของคนที่ห่วงกันแต่พูดไม่ตรงใจค่ะ ลองเริ่มจากการฟังความต้องการของอีกฝ่ายก่อนเสนอวิธีแก้ปัญหา',
+ 'สุขภาพ ไพ่ชวนให้ไม่เก็บความเครียดไว้คนเดียวค่ะ การคุยกับคนที่ไว้ใจอาจช่วยให้เบาใจ แต่เรื่องอาการทางกายควรปรึกษาแพทย์',
+ 'หมออยากให้จำไว้ว่าเราไม่จำเป็นต้องเดินคนเดียวค่ะ การรับความช่วยเหลือที่เหมาะสมไม่ได้ทำให้เราอ่อนแอ'
+ ]
+};
+const PHASE_LINES=[
+ ['ถ้ามองกลับไปในช่วงที่ผ่านมา','ในช่วงก่อนหน้านี้','พอหมอดูไพ่ใบแรก'],
+ ['พอมาถึงสิ่งที่กำลังเกิดขึ้นตอนนี้','ส่วนสถานการณ์ตรงหน้า','แล้วพอมาดูไพ่ใบกลาง'],
+ ['สำหรับแนวทางต่อจากนี้','ส่วนก้าวต่อไป','เมื่อมองไปข้างหน้า']
+];
+const BRIDGES=[
+ ['หมอเลยอยากให้ลองกลับมาทบทวนว่าอะไรเป็นเรื่องที่ค้างอยู่จริง ๆ ค่ะ','เรื่องที่ผ่านมาอาจสอนอะไรบางอย่างที่ตอนนั้นยังไม่ทันเห็นนะคะ','หมอไม่อยากให้ตัดสินตัวเองจากสิ่งที่ผ่านไปแล้วค่ะ'],
+ ['ตรงนี้หมออยากให้ดูสถานการณ์จริงประกอบด้วยนะคะ','ถ้ามีเรื่องต้องเลือก อย่าเพิ่งตอบเพราะความกดดันค่ะ','เรื่องที่ยังไม่ชัด ลองถามให้ชัดก่อนดีกว่านะคะ'],
+ ['ถ้าค่อย ๆ เตรียมตัว โอกาสที่จะรับมือได้ดีก็มีมากขึ้นค่ะ','ไม่ต้องเร่งทุกอย่างในวันเดียว เลือกทำเรื่องที่สำคัญก่อนนะคะ','หมออยากให้ใช้โอกาสนี้วางแผนอย่างมีสติค่ะ']
+];
+const DOMAIN_TAILS=[
+ ['ถ้ามีคนเสนองานหรือชวนทำอะไรใหม่ หมออยากให้ถามเรื่องขอบเขตงานและผลตอบแทนให้ชัดก่อนค่ะ','ถ้ากำลังเหนื่อยกับงานเดิม หมออยากให้แยกก่อนว่าเราอยากเปลี่ยนงาน หรือแค่อยากเปลี่ยนวิธีทำงานนะคะ','ถ้ากำลังรอคำตอบเรื่องงาน ใช้ช่วงนี้เตรียมสิ่งที่เราควบคุมได้ไว้ก่อนค่ะ'],
+ ['หมอขอเตือนว่าอย่าเอาเงินก้อนสำคัญไปเสี่ยงเพราะคำรับปากของใครนะคะ','ถ้ามีหนี้หรือรายจ่ายหลายทาง ลองเรียงลำดับตามความจำเป็นก่อนค่ะ','ถ้ากำลังมองหารายได้เสริม ให้เริ่มจากสิ่งที่มีทักษะและต้นทุนไม่สูงนะคะ'],
+ ['คนมีคู่ลองคุยกันเรื่องที่ค้างคา ส่วนคนโสดไม่ต้องรีบตัดสินใครจากความประทับใจครั้งแรกนะคะ','หมออยากให้ดูการกระทำที่สม่ำเสมอมากกว่าคำพูดที่ทำให้ใจเต้นนะคะ','ความรักไม่ควรทำให้เราต้องเดาใจหรือพิสูจน์ตัวเองอยู่ฝ่ายเดียวค่ะ'],
+ ['ถ้ามีผู้ใหญ่ที่เป็นห่วง ลองโทรถามสารทุกข์สุกดิบสักครั้งก็ได้นะคะ','ถ้าเรื่องเงินในบ้านทำให้ตึงเครียด ลองคุยกันด้วยตัวเลขและหน้าที่ที่ชัดเจนค่ะ','หมออยากให้ดูแลคนที่รักโดยไม่ลืมรักษาขอบเขตของตัวเองนะคะ'],
+ ['ถ้ามีอาการผิดปกติหรือเป็นต่อเนื่อง ควรให้แพทย์ตรวจนะคะ ไพ่ใช้วินิจฉัยโรคไม่ได้ค่ะ','ลองสังเกตว่าช่วงนี้พักผ่อนพอหรือเปล่า และอย่าฝืนถ้าเหนื่อยมากนะคะ','เริ่มจากการดูแลกิจวัตรพื้นฐานก่อน และขอคำแนะนำจากผู้เชี่ยวชาญเมื่อจำเป็นค่ะ'],
+ ['ไพ่ไม่ได้ตัดสินชีวิตแทนคุณนะคะ หมออยากให้ใช้เป็นมุมคิดแล้วเลือกด้วยตัวเองค่ะ','เรื่องไหนยังไม่ชัด ให้เวลาและหาข้อมูลก่อน ไม่จำเป็นต้องมีคำตอบวันนี้ค่ะ','หมอขอให้คุณเก็บแรงไว้กับสิ่งที่สำคัญจริง ๆ และค่อย ๆ ก้าวไปนะคะ']
+];
+const RECENT_KEY='morple_v8_scenario_history';
+let readingNonce=0, scenarioChoices=[];
+function getScenarioHistory(){try{const h=JSON.parse(sessionStorage.getItem(RECENT_KEY)||'[]');return Array.isArray(h)?h:[]}catch{return []}}
+function selectReadingNonce(){
+  readingNonce=Math.floor(Math.random()*2147483647);
+  const history=getScenarioHistory();
+  scenarioChoices=LIFE_AREAS.map((_,area)=>{
+    const used=new Set(history.filter(x=>x.area===area).map(x=>x.choice));
+    let available=Array.from({length:12},(_,i)=>i).filter(i=>!used.has(i));
+    if(!available.length){for(let i=history.length-1;i>=0;i--)if(history[i].area===area)history.splice(i,1);available=Array.from({length:12},(_,i)=>i)}
+    const cardSeed=(selected[area%3]+1)*13+(selected[(area+1)%3]+1)*7;
+    const choice=available[(cardSeed+readingNonce+area*31)%available.length];
+    history.push({area,choice});return choice;
+  });
+  try{sessionStorage.setItem(RECENT_KEY,JSON.stringify(history.slice(-72)))}catch{}
+}
+function areaReading(area){
+  // Concise, distinct readings: the three-card selection determines the scenario.
+  const scenario=MORPLE_SCENARIOS[area][scenarioChoices[area]];
+  const clean=t=>t.replace(/^(หมอเปิ้ล|หมอ)\s*(ขอ|อยาก|มองว่า|เห็นว่า|เข้าใจเลยว่า|รู้ว่า)/,'').trim();
+  // Two compact, practical sentences; no repeated ritual preamble.
+  const insight=clean(scenario[1]);
+  const caution=clean(scenario[2]);
+  return [`${insight} ${caution}`];
+}
+function readingText(idx,pos){
+  const [strength,warning]=CARD_STORIES[idx];
+  if(pos===0)return `บทเรียนที่ผ่านมา: ${strength} สิ่งที่ผ่านมาช่วยให้เห็นว่าควรเก็บอะไรไว้ และควรวางอะไรลงค่ะ`;
+  if(pos===1)return `สถานการณ์ตอนนี้: ${strength} ระวัง${warning} และดูข้อเท็จจริงก่อนตัดสินใจค่ะ`;
+  return `แนวโน้มข้างหน้า: ${strength} ค่อย ๆ เตรียมตัวให้พร้อม และอย่าลืม${warning}ค่ะ`;
+}
+function interpretWish(text){
+ const topics=[
+  {keys:['งาน','อาชีพ','ธุรกิจ','ลูกค้า','สมัครงาน','เลื่อนตำแหน่ง'],msg:'เรื่องงานที่คุณถาม หมออยากให้เริ่มจากสิ่งที่ลงมือทำได้ก่อนค่ะ ถ้ามีทางเลือกใหม่ก็ตรวจสอบเงื่อนไขให้ชัด'},
+  {keys:['เงิน','หนี้','รายได้','โชคลาภ','ค้าขาย','ลงทุน','ทรัพย์'],msg:'เรื่องเงินที่คุณตั้งใจถาม หมออยากให้วางแผนจากตัวเลขจริงก่อน อย่าเพิ่งเสี่ยงเพราะความกังวลนะคะ'},
+  {keys:['รัก','แฟน','คู่','คนคุย','แต่งงาน','ความสัมพันธ์'],msg:'เรื่องหัวใจที่คุณถาม หมออยากให้ดูทั้งความรู้สึกของตัวเองและการกระทำของอีกฝ่ายค่ะ'},
+  {keys:['ครอบครัว','พ่อ','แม่','ลูก','ญาติ','บ้าน'],msg:'เรื่องคนในบ้านที่คุณเป็นห่วง หมออยากให้เริ่มจากการคุยกันด้วยความเข้าใจ และไม่รับภาระไว้คนเดียวค่ะ'},
+  {keys:['สุขภาพ','ป่วย','โรค','นอน','เครียด','เหนื่อย'],msg:'เรื่องสุขภาพที่คุณกังวล หมออยากให้ดูแลการพักผ่อน และใช้คำแนะนำทางการแพทย์เมื่อมีอาการนะคะ'}
+ ];
+ const found=topics.find(t=>t.keys.some(k=>text.toLowerCase().includes(k)));
+ return found?found.msg:'สำหรับสิ่งที่คุณอธิษฐานไว้ หมออยากให้ค่อย ๆ พิจารณาทั้งความรู้สึกและข้อมูลจริง ไม่ต้องรีบหาคำตอบทั้งหมดในวันนี้นะคะ';
+}
+function showResults(){
+ selectReadingNonce();
+ $('deckSection').classList.add('hidden');$('resultSection').classList.remove('hidden');
+ $('greeting').textContent=`คุณ${reader.first} ${reader.last} (${reader.nick}) · ราศี${reader.zodiac}`;
+ $('wishEcho').textContent=`คำอธิษฐาน: “${reader.wish}”`;
+ $('results').replaceChildren();
+ selected.forEach((idx,pos)=>{const [en,th]=CARD_NAMES[idx];const card=document.createElement('article');card.className='result';const label=document.createElement('div');label.className='tag';label.textContent=`ไพ่ใบที่ ${pos+1} · ${positions[pos]}`;const img=document.createElement('img');img.src=`images/cards/card-${String(idx+1).padStart(2,'0')}.webp`;img.alt=`${en} — ${th}`;const heading=document.createElement('h3');heading.textContent=en;const thai=document.createElement('div');thai.className='thai';thai.textContent=th;const p=document.createElement('p');p.textContent=readingText(idx,pos);card.append(label,img,heading,thai,p);$('results').append(card)});
+ $('lifeReadings').replaceChildren();LIFE_AREAS.forEach((area,i)=>{const item=document.createElement('article');item.className='life-item';const title=document.createElement('h3');title.textContent=`${area.icon} ${area.title}`;const paragraph=document.createElement('p');areaReading(i).forEach((part,j)=>{const p=j===0?paragraph:document.createElement('p');p.textContent=part;item.append(p)});item.prepend(title);$('lifeReadings').append(item)});
+ $('score').textContent='สิ่งที่ไพ่กำลังสะท้อน';
+ $('summary').textContent=`คุณ${reader.nick}คะ ${interpretWish(reader.wish)} ไพ่ทั้งสามใบเป็นแนวทางให้ลองมองทางเลือกที่มีอยู่ ก่อนตัดสินใจในเรื่องสำคัญนะคะ`;
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+$('restart').addEventListener('click',()=>{$('resultSection').classList.add('hidden');$('formSection').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})});
+// Paste the real Messenger / LINE / booking URL here before publishing.
+const BOOKING_URL='';
+document.querySelectorAll('[data-booking]').forEach(link=>{
+  if(BOOKING_URL){link.href=BOOKING_URL;link.target='_blank';link.rel='noopener noreferrer'}
+  else link.addEventListener('click',event=>{event.preventDefault();alert('ยังไม่ได้ตั้งค่าลิงก์จองคิว กรุณาติดต่อผู้ดูแลเว็บไซต์เพื่อเพิ่มลิงก์ Messenger หรือ LINE ของหมอเปิ้ล');});
+});
+</script></body></html>
