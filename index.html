@@ -43,6 +43,54 @@ body{background:#fff9f6} .header{background:rgba(255,250,248,.93);border-bottom:
   .hero-inner-v4{padding-top:65vw}
   .hero-wash{background:linear-gradient(to bottom,transparent 0%,rgba(255,248,248,.05) 34vw,#fff7f5 69vw,#fff7f5 100%)}
 }
+
+/* V11 — Mobile polish: header, spacing, readability and footer.
+   Keep existing hero-image fit rules unchanged. */
+:root { scroll-padding-top: 82px; }
+.footer .brand { color: #fff3e8; }
+.footer .brand b { color: #fff3e8; }
+.footer .brand small { color: #efd1b7; }
+.footer .brand-icon { color: #d9ab71; }
+.footer nav a { color: #f8e9ed; }
+.footer nav a:hover, .footer nav a:focus-visible { color: #f4c78d; }
+.footer small, .footer .disclaimer { color: #e9cfdc; }
+.footer { padding: 38px 0 30px; }
+@media (max-width: 760px) {
+  html { scroll-padding-top: 74px; }
+  .nav { min-height: 70px; gap: 10px; }
+  .header .wrap { padding-left: 16px; padding-right: 16px; }
+  .brand { gap: 8px; }
+  .brand-icon { font-size: 30px; }
+  .brand b { font-size: 17px; line-height: 1.13; }
+  .brand small { display: block; font-size: 9px; line-height: 1.4; margin-top: 3px; }
+  .actions { gap: 8px; }
+  .music { width: 39px; height: 39px; flex-shrink: 0; }
+  .menu { font-size: 25px; width: 36px; min-height: 40px; }
+  .navlinks { top: 100%; }
+  .section { padding-top: 48px; padding-bottom: 48px; }
+  .section-head { margin-bottom: 25px; }
+  .section-head h2 { font-size: clamp(25px, 6vw, 32px); line-height: 1.4; }
+  .about-grid { gap: 23px; }
+  .about-photo { height: 360px; }
+  .about h2 { font-size: clamp(25px, 6vw, 31px); line-height: 1.5; }
+  .about p { font-size: 14px; line-height: 1.85; }
+  .experience { gap: 9px; justify-content: center; }
+  .experience div { min-width: 0; flex: 1 1 125px; padding: 12px 10px; }
+  .experience strong { font-size: 21px; }
+  .article { padding: 22px; }
+  .cta-banner { padding: 25px 18px; }
+  .cta-banner h3 { line-height: 1.4; }
+  .footer-row { gap: 19px; }
+  .footer nav { row-gap: 10px; }
+  .footer .disclaimer { line-height: 1.8; }
+}
+@media (max-width: 390px) {
+  .header .wrap { padding-left: 12px; padding-right: 12px; }
+  .brand b { font-size: 16px; }
+  .brand-icon { font-size: 28px; }
+  .actions { gap: 4px; }
+  .music { width: 36px; height: 36px; }
+}
 </style></head><body>
 <header class="header"><div class="wrap nav"><a aria-label="หมอเปิ้ลจับญาณ หน้าแรก" class="brand" href="#home"><span class="brand-icon">♧</span><span><b>หมอเปิ้ล<br/>จับญาณ</b><small>พลังศรัทธา นำทางชีวิต</small></span></a><nav aria-label="เมนูหลัก" class="navlinks" id="navlinks"><a href="#home">หน้าแรก</a><a href="#about">เกี่ยวกับหมอเปิ้ล</a><a href="#services">บริการของเรา</a><a href="#articles">บทความสายมู</a><a href="#reviews">รีวิวจากลูกค้า</a><a href="#contact">ติดต่อเรา</a></nav><div class="actions"><button aria-label="เปิดเพลงบรรยากาศ" aria-pressed="false" class="music" id="music">♫</button><a class="button main book-top" href="https://lin.ee/wETP97h" rel="noopener noreferrer" target="_blank">▦ จองคิวดูดวง ›</a><button aria-expanded="false" aria-label="เปิดเมนู" class="menu" id="menu">☰</button></div></div></header>
 <main><section class="hero" id="home"><div aria-label="หมอเปิ้ลในบรรยากาศพระพิฆเนศและปราสาทสวรรค์" class="hero-image" role="img"></div><div class="hero-wash"></div><div class="wrap hero-inner-v4"><div class="hero-spacer"></div><div class="hero-content-v4"><span class="hero-kicker">✧ MORPLE JABYAN · CELESTIAL GUIDANCE ✧</span><h1>หมอเปิ้ล<br/><em>จับญาณ</em></h1><div class="gold-rule"><span>✦</span></div><p class="hero-tag">พลังศรัทธา นำทางชีวิต</p><p class="hero-quote">“ทุกปัญหามีทางออก<br/>ทุกเส้นทางมีแสงสว่างเสมอ”</p><p class="hero-desc">รับฟังทุกเรื่องราวด้วยความเข้าใจ ผ่านประสบการณ์ดูดวงมากกว่า 20 ปี พร้อมช่วยให้คุณมองเห็นทางเลือกและกำลังใจในการก้าวต่อไป</p><a class="button main hero-cta" href="https://lin.ee/wETP97h" rel="noopener noreferrer" target="_blank">✧ จองคิวดูดวงกับหมอเปิ้ล <span>→</span></a><div class="social hero-social"><a class="social-link" href="https://lin.ee/wETP97h" rel="noopener noreferrer" target="_blank"><span class="social-logo line">LINE</span><span>LINE</span></a><a class="social-link" href="https://www.facebook.com/Morplejabyarn" rel="noopener noreferrer" target="_blank"><span class="social-logo fb">f</span><span>Facebook</span></a><a class="social-link" href="https://www.youtube.com/@Morplejabyan" rel="noopener noreferrer" target="_blank"><span class="social-logo yt">▶</span><span>YouTube</span></a><a class="social-link" href="https://www.tiktok.com/@morplejabyarn" rel="noopener noreferrer" target="_blank"><span class="social-logo tt">♪</span><span>TikTok</span></a></div></div></div></section>
