@@ -25,6 +25,24 @@ body{background:#fff9f6} .header{background:rgba(255,250,248,.93);border-bottom:
 @media(max-width:1000px){.hero-inner-v4{grid-template-columns:47% 53%}.hero-wash{background:linear-gradient(90deg,transparent 0%,rgba(255,249,247,.15) 33%,rgba(255,250,248,.9) 59%,rgba(255,250,248,.96) 100%)}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card-image{height:270px}}
 @media(max-width:650px){.hero{min-height:0}.hero-image{background-position:29% top;background-size:auto 380px;background-repeat:no-repeat;background-color:#f9e6eb}.hero-wash{background:linear-gradient(to bottom,transparent 0,rgba(255,248,248,.02) 270px,#fff7f5 395px,#fff7f5 100%)}.hero-inner-v4{display:block;min-height:0;padding-top:350px;padding-bottom:38px}.hero-content-v4{padding:10px 0 0}.hero h1{font-size:51px}.hero-kicker{font-size:9px;letter-spacing:.13em}.hero-quote{font-size:21px}.hero-tag{font-size:17px}.hero-desc{font-size:12px}.hero-cta{min-width:0;width:100%;max-width:350px}.cards{gap:12px}.card-image{height:180px}.card h3{font-size:16px}.card-body{padding:14px 10px 17px}.card p{font-size:11px}.card .button{white-space:normal;min-height:41px}}
 @media(max-width:380px){.hero-inner-v4{padding-top:310px}.hero-image{background-size:auto 340px}.hero-wash{background:linear-gradient(to bottom,transparent 0,rgba(255,248,248,.05) 245px,#fff7f5 350px)}.card-image{height:145px}}
+
+/* HERO IMAGE FIT FIX — desktop and mobile */
+@media (min-width:651px){
+  .hero{min-height:0;background:#fff1f1}
+  .hero-image{background-size:100% auto;background-position:center top;background-repeat:no-repeat}
+  .hero-inner-v4{min-height:clamp(450px,42vw,640px)}
+  .hero-wash{background:linear-gradient(90deg,transparent 0%,rgba(255,249,247,.04) 43%,rgba(255,250,247,.82) 64%,rgba(255,249,247,.94) 100%)}
+}
+@media (max-width:650px){
+  .hero-image{background-size:100% auto;background-position:center top;background-repeat:no-repeat;background-color:#fff1f1}
+  .hero-inner-v4{padding-top:clamp(205px,65vw,380px)}
+  .hero-wash{background:linear-gradient(to bottom,transparent 0%,rgba(255,248,248,.05) 34vw,#fff7f5 69vw,#fff7f5 100%)}
+}
+@media (max-width:380px){
+  .hero-image{background-size:100% auto}
+  .hero-inner-v4{padding-top:65vw}
+  .hero-wash{background:linear-gradient(to bottom,transparent 0%,rgba(255,248,248,.05) 34vw,#fff7f5 69vw,#fff7f5 100%)}
+}
 </style></head><body>
 <header class="header"><div class="wrap nav"><a aria-label="หมอเปิ้ลจับญาณ หน้าแรก" class="brand" href="#home"><span class="brand-icon">♧</span><span><b>หมอเปิ้ล<br/>จับญาณ</b><small>พลังศรัทธา นำทางชีวิต</small></span></a><nav aria-label="เมนูหลัก" class="navlinks" id="navlinks"><a href="#home">หน้าแรก</a><a href="#about">เกี่ยวกับหมอเปิ้ล</a><a href="#services">บริการของเรา</a><a href="#articles">บทความสายมู</a><a href="#reviews">รีวิวจากลูกค้า</a><a href="#contact">ติดต่อเรา</a></nav><div class="actions"><button aria-label="เปิดเพลงบรรยากาศ" aria-pressed="false" class="music" id="music">♫</button><a class="button main book-top" href="https://lin.ee/wETP97h" rel="noopener noreferrer" target="_blank">▦ จองคิวดูดวง ›</a><button aria-expanded="false" aria-label="เปิดเมนู" class="menu" id="menu">☰</button></div></div></header>
 <main><section class="hero" id="home"><div aria-label="หมอเปิ้ลในบรรยากาศพระพิฆเนศและปราสาทสวรรค์" class="hero-image" role="img"></div><div class="hero-wash"></div><div class="wrap hero-inner-v4"><div class="hero-spacer"></div><div class="hero-content-v4"><span class="hero-kicker">✧ MORPLE JABYAN · CELESTIAL GUIDANCE ✧</span><h1>หมอเปิ้ล<br/><em>จับญาณ</em></h1><div class="gold-rule"><span>✦</span></div><p class="hero-tag">พลังศรัทธา นำทางชีวิต</p><p class="hero-quote">“ทุกปัญหามีทางออก<br/>ทุกเส้นทางมีแสงสว่างเสมอ”</p><p class="hero-desc">รับฟังทุกเรื่องราวด้วยความเข้าใจ ผ่านประสบการณ์ดูดวงมากกว่า 20 ปี พร้อมช่วยให้คุณมองเห็นทางเลือกและกำลังใจในการก้าวต่อไป</p><a class="button main hero-cta" href="https://lin.ee/wETP97h" rel="noopener noreferrer" target="_blank">✧ จองคิวดูดวงกับหมอเปิ้ล <span>→</span></a><div class="social hero-social"><a class="social-link" href="https://lin.ee/wETP97h" rel="noopener noreferrer" target="_blank"><span class="social-logo line">LINE</span><span>LINE</span></a><a class="social-link" href="https://www.facebook.com/Morplejabyarn" rel="noopener noreferrer" target="_blank"><span class="social-logo fb">f</span><span>Facebook</span></a><a class="social-link" href="https://www.youtube.com/@Morplejabyan" rel="noopener noreferrer" target="_blank"><span class="social-logo yt">▶</span><span>YouTube</span></a><a class="social-link" href="https://www.tiktok.com/@morplejabyarn" rel="noopener noreferrer" target="_blank"><span class="social-logo tt">♪</span><span>TikTok</span></a></div></div></div></section>
