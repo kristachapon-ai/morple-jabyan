@@ -349,7 +349,7 @@ function showResults(){
 }
 $('restart').addEventListener('click',()=>{$('resultSection').classList.add('hidden');$('formSection').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})});
 // Paste the real Messenger / LINE / booking URL here before publishing.
-const BOOKING_URL='';
+const BOOKING_URL='https://lin.ee/wETP97h';
 document.querySelectorAll('[data-booking]').forEach(link=>{
   if(BOOKING_URL){link.href=BOOKING_URL;link.target='_blank';link.rel='noopener noreferrer'}
   else link.addEventListener('click',event=>{event.preventDefault();alert('ยังไม่ได้ตั้งค่าลิงก์จองคิว กรุณาติดต่อผู้ดูแลเว็บไซต์เพื่อเพิ่มลิงก์ Messenger หรือ LINE ของหมอเปิ้ล');});
